@@ -11,6 +11,10 @@
       ./modules/core/base.nix
     ];
 
+    home-manager.users.raffaele = { # Replace 'root' with your actual username (e.g., 'yourusername')
+      imports = [ ./home.nix ]; # Point to your Home Manager configuration file
+    };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
