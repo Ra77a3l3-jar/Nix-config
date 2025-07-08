@@ -81,6 +81,7 @@
      keepassxc
      wget
      curl
+     lazygit
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
