@@ -4,10 +4,10 @@
 {
   # Define your user. Don't forget to change "yourusername".
   home.username = "raffaele"; # Replace 'root' with your actual username
-  home.homeDirectory = "/home/raffaele/"; # Replace '/root' with your actual home directory (e.g., "/home/yourusername")
+  home.homeDirectory = "/home/raffaele"; # Replace '/root' with your actual home directory (e.g., "/home/yourusername")
 
   # Set state version for Home Manager
-  home.stateVersion = "24.05"; # Match this with your Home Manager release (or a compatible one)
+  home.stateVersion = "25.05"; # Match this with your Home Manager release (or a compatible one)
 
   # List packages that you want to install for your user
   home.packages = with pkgs; [

@@ -6,7 +6,7 @@
 
     # Add Home Manager as an input
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05"; # Use the stable branch corresponding to your Nixpkgs
+      url = "github:nix-community/home-manager/release-25.05"; # Use the stable branch corresponding to your Nixpkgs
       inputs.nixpkgs.follows = "nixpkgs"; # Ensure it uses the same nixpkgs as your system
     };
 
