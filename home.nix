@@ -4,7 +4,8 @@
 {
 
   imports = [
-    ./modules/programs/coding/helix.nix
+    ./modules/programs/coding/ghostty.nix
+    ./modules/programs/coding/languages.nix    
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
@@ -13,16 +14,22 @@
   home.stateVersion = "25.05"; # Match this with your Home Manager release (or a compatible one)
 
   home.packages = with pkgs; [
+
     ghostty
     zellij
-    neovim
-    helix
+
+    bat
+    eza
+    atuin
+    dust
+    btop
     
   ];
 
   home.sessionVariables = {
     EDITOR = "helix";
     BROWSER = "firefox";
+    TERMINAL = "ghostty";
   };
 
 }

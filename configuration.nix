@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/core/base.nix
+      ./modules/programs/coding/zsh.nix
     ];
 
     home-manager.users.raffaele = {
@@ -82,7 +83,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      sbctl
-     vim
+     helix
      git
      keepassxc
      wget
@@ -90,7 +91,7 @@
      tree
      lazygit
      gnome-extension-manager
+     gnome-tweaks
   ];
-
    
  }
