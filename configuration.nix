@@ -82,12 +82,14 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      sbctl
-     helix
+     vim
      git
      keepassxc
      wget
      curl
+     tree
      lazygit
+     gnome-extension-manager
   ];
 
    
