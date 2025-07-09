@@ -11,8 +11,8 @@
       ./modules/core/base.nix
     ];
 
-    home-manager.users.raffaele = { # Replace 'root' with your actual username (e.g., 'yourusername')
-      imports = [ ./home.nix ]; # Point to your Home Manager configuration file
+    home-manager.users.raffaele = {
+      imports = [ ./home.nix ]; 
     };
 
   # Bootloader.
@@ -61,9 +61,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
     security.sudo = {
       enable = true;
       wheelNeedsPassword = false;
@@ -93,22 +90,5 @@
      lazygit
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+   
  }
