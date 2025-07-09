@@ -3,6 +3,8 @@
 
 {
 
+  nixpkgs.config.allowUnfree = true;
+    
   imports = [
     ./modules/programs/coding/ghostty.nix
     ./modules/programs/coding/languages.nix    
@@ -23,6 +25,13 @@
     atuin
     dust
     btop
+    zoxide
+    fzf
+    ripgrep
+
+    obsidian
+    libreoffice
+    yubikey-manager
     
   ];
 
