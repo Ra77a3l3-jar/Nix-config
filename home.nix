@@ -34,7 +34,6 @@
 
     neovim
     discord
-    zed-editor
         
   ];
 
