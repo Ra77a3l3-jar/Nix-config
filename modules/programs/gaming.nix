@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-
-=======
 { config, pkgs, lib, ... }:
 
 {
@@ -33,4 +30,3 @@
   ];
 
 }
->>>>>>> Stashed changes
