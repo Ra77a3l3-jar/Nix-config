@@ -9,7 +9,7 @@ let
     "io.github.alainm23.planify"
     "com.leinardi.gwe"
     "io.missioncenter.MissionCenter"
-    "dev.zed.Zed"
+    #"dev.zed.Zed"
     "com.google.Chrome"
   ];
 in {
