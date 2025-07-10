@@ -8,7 +8,7 @@
   imports = [
     ./modules/programs/coding/ghostty.nix
     ./modules/programs/coding/languages.nix
-    
+    ./modules/programs/flatpak.nix    
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
@@ -34,6 +34,7 @@
     libreoffice
 
     neovim
+    discord
         
   ];
 
