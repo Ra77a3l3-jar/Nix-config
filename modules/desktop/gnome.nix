@@ -34,8 +34,10 @@
   environment.systemPackages = with pkgs; [
     gnome-tweaks
     gnome-extension-manager
-    
+    yaru-theme
   ];
+
+  programs.dconf.enable = true;
 
   environment.gnome.excludePackages = (with pkgs; [
 
@@ -54,5 +56,13 @@
     totem
   ]);
 
+  home-manager = {
+    users.raffaele = {
+      dconf = {
+        enable = true;
+        settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      };
+    };
+  };
   
 }
