@@ -12,7 +12,7 @@
   ];
 
   # For gamemode service if you want to enable it system-wide
-  services.gamemode.enable = true;
+  programs.gamemode.enable = true;
 
   # If you want to add some extra config for steam or proton,
   # usually you configure inside the apps, not here.
