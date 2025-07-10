@@ -59,7 +59,6 @@
     gnome-logs
     eog
     simple-scan
-    nixos-manual-tools
     gnome-font-viewer
     seahorse
     yelp
