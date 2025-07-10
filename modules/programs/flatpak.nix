@@ -3,7 +3,6 @@
 let
   flatpakApps = [
     "io.github.flattool.Warehouse"
-    "com.discordapp.Discord"
     "com.obsproject.Studio"
     "org.gnome.Boxes"
     "org.gnome.Papers"

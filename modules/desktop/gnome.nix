@@ -54,6 +54,17 @@
     gnome-contacts
     
     totem
+
+    evince
+    gnome-logs
+    eog
+    simple-scan
+    nixos-manual-tools
+    gnome-font-viewer
+    seahorse
+    yelp
+    gnome-calendar
+    rhythmbox
   ]);
 
   home-manager = {
