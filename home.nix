@@ -31,8 +31,7 @@
 
     obsidian
     libreoffice
-    yubikey-manager
-    
+        
   ];
 
   home.sessionVariables = {

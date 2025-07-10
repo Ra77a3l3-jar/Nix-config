@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./modules/core/base.nix
       ./modules/programs/coding/zsh.nix
+      ./modules/desktop/gnome.nix
     ];
 
     home-manager.users.raffaele = {
@@ -90,8 +91,6 @@
      curl
      tree
      lazygit
-     gnome-extension-manager
-     gnome-tweaks
   ];
    
  }
