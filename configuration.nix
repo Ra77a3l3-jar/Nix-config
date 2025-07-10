@@ -11,6 +11,11 @@
       ./modules/core/base.nix
       ./modules/programs/coding/zsh.nix
       ./modules/desktop/gnome.nix
+<<<<<<< Updated upstream
+=======
+      ./modules/core/drivers.nix
+      ./modules/programs/gaming.nix
+>>>>>>> Stashed changes
     ];
 
     home-manager.users.raffaele = {

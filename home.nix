@@ -7,7 +7,12 @@
     
   imports = [
     ./modules/programs/coding/ghostty.nix
+<<<<<<< Updated upstream
     ./modules/programs/coding/languages.nix    
+=======
+    ./modules/programs/coding/languages.nix
+        
+>>>>>>> Stashed changes
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
@@ -31,6 +36,8 @@
 
     obsidian
     libreoffice
+
+    neovim
         
   ];
 
