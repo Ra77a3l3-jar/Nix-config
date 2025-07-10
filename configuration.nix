@@ -94,5 +94,7 @@
      tree
      lazygit
   ];
+
+  services.flatpak.enable = true;
    
  }
