@@ -93,6 +93,7 @@
      curl
      tree
      lazygit
+     zoxide
   ];
 
   services.flatpak.enable = true;

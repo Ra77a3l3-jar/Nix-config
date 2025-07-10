@@ -25,8 +25,8 @@
     eza
     atuin
     dust
+    nvtop
     btop
-    zoxide
     fzf
     ripgrep
 

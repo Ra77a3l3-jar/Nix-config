@@ -10,7 +10,11 @@
       enable = true;
       theme = "robbyrussell";
     };
+    
     interactiveShellInit = ''
+
+      eval "$(zoxide init zsh)"
+    
       alias ex='exit'
       alias gs='git status'
       alias zl='zellij'
