@@ -25,7 +25,6 @@
     eza
     atuin
     dust
-    nvtopPackages.nvidia
     btop
     fzf
     ripgrep
