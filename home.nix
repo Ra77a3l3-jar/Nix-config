@@ -35,6 +35,7 @@
     libreoffice
 
     discord
+    bottles
         
   ];
 
