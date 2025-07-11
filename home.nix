@@ -33,7 +33,6 @@
     obsidian
     libreoffice
 
-    neovim
     discord
         
   ];
