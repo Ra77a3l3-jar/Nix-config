@@ -14,7 +14,7 @@
     window-padding-x = 15
     window-padding-y = 15
     window-save-state = "always"
-    background-opacity = 0.98
+    background-opacity = 0.96
     background-blur-radius = 25
     window-decoration = false
   '';
