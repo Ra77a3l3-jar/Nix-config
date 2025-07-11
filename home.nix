@@ -10,6 +10,7 @@
     ./modules/programs/flatpak.nix
     ./modules/programs/coding/languages.nix
     ./modules/programs/coding/git.nix
+    ./modules/programs/coding/zellij.nix
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
@@ -20,7 +21,6 @@
   home.packages = with pkgs; [
 
     ghostty
-    zellij
 
     bat
     eza
