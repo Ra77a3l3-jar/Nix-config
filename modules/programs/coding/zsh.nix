@@ -20,6 +20,23 @@
       alias zl='zellij'
       alias cl='clear'
       alias hs='history'
+      alias cat='bat'
+
+      alias ltree='eza --tree --level=3 --long --icons'
+
+      alias ls='eza'                            # basic ls replacement
+      alias ll='eza -l'                         # long format
+      alias la='eza -la'                        # long + hidden files
+      alias l='eza -lah --group-directories-first --icons'  # fancy listing
+      alias lt='eza --tree --level=2 --icons'  # tree view
+      alias lg='eza -l --git'                  # long + git status
+      alias ld='eza -lD'                       # directories only
+      alias lf='eza -l --only-files'           # files only
+
+      alias lsg='eza -lah --git --icons --group-directories-first'
+      alias lst='eza --tree --icons --git --group-directories-first'
+
+
     '';
   };
 
