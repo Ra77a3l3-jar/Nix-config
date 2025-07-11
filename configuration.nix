@@ -13,6 +13,7 @@
       ./modules/desktop/gnome.nix
       ./modules/core/drivers.nix
       ./modules/programs/gaming.nix
+      ./modules/programs/coding/helix.nix
     ];
 
     home-manager.users.raffaele = {
