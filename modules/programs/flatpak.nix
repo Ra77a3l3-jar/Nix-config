@@ -7,7 +7,6 @@ let
     "org.gnome.Boxes"
     "org.gnome.Papers"
     "io.github.alainm23.planify"
-    "com.leinardi.gwe"
     "com.google.Chrome"
   ];
 in {
