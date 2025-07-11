@@ -8,8 +8,7 @@
   imports = [
     ./modules/programs/coding/ghostty.nix
     ./modules/programs/flatpak.nix
-    ./modules/programs/coding/languages.nix
-    ./modules/programs/coding/nvim.nix    
+    ./modules/programs/coding/languages.nix 
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
