@@ -40,10 +40,13 @@
       enable = true;
       wheelNeedsPassword = false;
     };
+
+  users.groups.raffaele = {};
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.raffaele = {
     isNormalUser = true;
+    group = "raffaele";
     description = "raffaele";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [

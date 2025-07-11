@@ -7,7 +7,6 @@
     
   imports = [
     ./modules/programs/coding/ghostty.nix
-    #./modules/programs/coding/languages.nix
     ./modules/programs/flatpak.nix    
   ];
   

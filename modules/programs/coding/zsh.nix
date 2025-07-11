@@ -12,7 +12,7 @@
     };
     
     interactiveShellInit = ''
-
+      export PATH=$HOME/.nix-profile/bin:$PATH
       eval "$(zoxide init zsh)"
     
       alias ex='exit'
