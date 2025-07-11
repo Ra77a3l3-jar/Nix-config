@@ -20,6 +20,7 @@
   home.packages = with pkgs; [
 
     ghostty
+    zellij
 
     bat
     eza
