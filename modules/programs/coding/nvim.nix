@@ -6,110 +6,116 @@
     viAlias  = true;
     vimAlias = true;
 
-    # Core / UI plugins
     plugins = with pkgs.vimPlugins; [
-      rose-pine               # Dark colourscheme
-      lualine-nvim            # Status‑line
-      which-key-nvim          # Helix‑like key‑hint popup
-      noice-nvim              # Better ‑‑cmd‑line & LSP UI
-      bufferline-nvim         # Tab‑bar for buffers
-      gitsigns-nvim           # Git gutter
+      rose-pine
+      which-key-nvim
+      noice-nvim
+      bufferline-nvim
+      gitsigns-nvim
 
-      mini-nvim               # mini.* collection → mini.pairs
-      blink-cmp               # Cursor blink on completion entry
+      mini-nvim           # mini.pairs only
+      nvim-tree-lua       # file explorer
 
-      fzf-vim                 # FZF inside Neovim
-      telescope-nvim          # Grep / Fuzzy finder interface
+      fzf-vim
+      telescope-nvim
 
-      # Runtime deps
       plenary-nvim
       nvim-web-devicons
     ];
 
     extraPackages = with pkgs; [
-      ripgrep   # `Rg` for live‑grep
-      fd        # fast file finder used by Telescope/FZF
+      ripgrep
+      fd
     ];
 
-    # Lua configuration injected after plugins are loaded
     extraLuaConfig = ''
-      ---------------------------------------------------------------------------
-      -- General ----------------------------------------------------------------
+      vim.g.mapleader = " "
       vim.o.termguicolors = true
 
-      -- Rose‑Pine dark variant --------------------------------------------------
+      ----------------------------------------------------------------------------
+      -- Theme: Rose Pine Dark --------------------------------------------------
       require("rose-pine").setup({
-        variant = "moon",       -- dark theme
+        variant = "moon",
         dark_variant = "moon",
+        disable_background = false,
+        dim_nc_background = true,
+        disable_float_background = false,
       })
       vim.cmd.colorscheme("rose-pine")
 
-      ---------------------------------------------------------------------------
-      -- Lualine -----------------------------------------------------------------
-      require("lualine").setup({
-        options = {
-          theme = "rose-pine",
-          component_separators = "",
-          section_separators   = "",
-        },
-      })
-
-      ---------------------------------------------------------------------------
-      -- Which‑Key (Helix style) -------------------------------------------------
+      ----------------------------------------------------------------------------
+      -- Which Key: Polished UI -------------------------------------------------
       require("which-key").setup({
-        window = {
-          border = "rounded",
-          margin = { 1, 2, 1, 2 },
+        plugins = {
+          marks = true,
+          registers = true,
         },
         icons = {
-          group      = "▶",    -- similar to Helix
+          group      = "➤",
           separator  = "➜",
+          breadcrumb = "»",
         },
+        window = {
+          border = "single",
+          padding = { 1, 1, 1, 1 },
+        },
+        layout = {
+          height = { min = 4, max = 25 },
+          spacing = 4,
+          align = "left"
+        }
       })
 
-      ---------------------------------------------------------------------------
-      -- Noice -------------------------------------------------------------------
+      ----------------------------------------------------------------------------
+      -- Noice UI Enhancements --------------------------------------------------
       require("noice").setup({
         presets = {
-          command_palette = true,  -- cmd‑line at top ‑> palette
-          bottom_search   = true,  -- classic bottom search
+          command_palette = true,
+          bottom_search = true,
+          long_message_to_split = true,
         },
-        lsp = {
-          progress = { enabled = true },
-          signature = { enabled = false },
-        },
+        lsp = { enabled = false }, -- no LSP integration
       })
 
-      ---------------------------------------------------------------------------
-      -- Blink‑cmp ---------------------------------------------------------------
-      require("blink-cmp").setup({
-        highlight = "CursorLine", -- subtle flash
-      })
-
-      ---------------------------------------------------------------------------
-      -- mini.pairs --------------------------------------------------------------
+      ----------------------------------------------------------------------------
+      -- Mini Pairs -------------------------------------------------------------
       require("mini.pairs").setup()
 
-      ---------------------------------------------------------------------------
-      -- Bufferline --------------------------------------------------------------
+      ----------------------------------------------------------------------------
+      -- Bufferline -------------------------------------------------------------
       require("bufferline").setup({
         options = {
           separator_style = "slant",
           show_close_icon = false,
+          show_buffer_close_icons = false,
         },
       })
 
-      ---------------------------------------------------------------------------
-      -- Gitsigns ----------------------------------------------------------------
+      ----------------------------------------------------------------------------
+      -- GitSigns ---------------------------------------------------------------
       require("gitsigns").setup()
 
-      ---------------------------------------------------------------------------
-      -- Telescope / FZF key‑bindings -------------------------------------------
+      ----------------------------------------------------------------------------
+      -- Nvim Tree --------------------------------------------------------------
+      require("nvim-tree").setup({
+        view = {
+          width = 30,
+          side = "left",
+        },
+        renderer = {
+          highlight_opened_files = "name",
+        },
+        filters = {
+          dotfiles = false,
+        },
+      })
+      vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+
+      ----------------------------------------------------------------------------
+      -- Telescope / FZF --------------------------------------------------------
       vim.keymap.set("n", "<leader>ff", ":Files<CR>", { desc = "FZF: find file" })
-      vim.keymap.set("n", "<leader>fg", ":Rg<CR>",    { desc = "FZF: live grep" })
-      vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep,
-        { desc = "Telescope: live grep" })
+      vim.keymap.set("n", "<leader>fg", ":Rg<CR>",    { desc = "FZF: grep" })
+      vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "Telescope: live grep" })
     '';
   };
 }
-

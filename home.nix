@@ -28,6 +28,7 @@
     dust
     btop
     fzf
+    fd
     ripgrep
 
     obsidian
