@@ -36,6 +36,16 @@
       alias lsg='eza -lah --git --icons --group-directories-first'
       alias lst='eza --tree --icons --git --group-directories-first'
 
+      alias h='atuin search'                   # fuzzy history search
+      alias hh='atuin search --interactive'    # interactive history
+      alias hc='atuin clear'                   # clear history
+
+      alias grep='rg'                          # use ripgrep instead of grep
+      alias rgf='rg --files'                   # list files ripgrep would search
+      alias rgi='rg -i'                        # case-insensitive search
+      alias rgs='rg --smart-case'             # smart case search
+      alias rgw='rg -w'                        # word match
+
 
     '';
   };
