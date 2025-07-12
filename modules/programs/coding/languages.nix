@@ -10,6 +10,7 @@
     # Java
     jdk
     gradle
+    jdt-language-server
 
     # Zig
     zig
