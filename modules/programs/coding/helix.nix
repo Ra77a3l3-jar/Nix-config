@@ -41,6 +41,9 @@ mode.select = "SELECT"
 EOF
 
       cat > /home/${user}/.config/helix/languages.toml <<'EOF'
+[[language]]
+name = "java"
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "zig"
