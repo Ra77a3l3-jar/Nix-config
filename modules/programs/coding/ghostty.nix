@@ -14,8 +14,8 @@
     window-padding-x = 15
     window-padding-y = 15
     window-save-state = "always"
-    background-opacity = 0.96
-    background-blur-radius = 25
+    background-opacity = 0.88
+    background-blur-radius = 30
     window-decoration = false
   '';
 }
