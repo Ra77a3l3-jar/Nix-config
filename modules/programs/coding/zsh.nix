@@ -22,7 +22,7 @@
       alias hs='history'
       alias cat='bat'
 
-      alias ltree='eza --tree --level=3 --long --icons'
+      alias ltree='eza --tree --level=10 --long --icons'
 
       alias ls='eza --icons'                            # basic ls replacement
       alias ll='eza -l'                         # long format
