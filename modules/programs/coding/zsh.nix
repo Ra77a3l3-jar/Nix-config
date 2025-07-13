@@ -24,12 +24,12 @@
 
       alias ltree='eza --tree --level=3 --long --icons'
 
-      alias ls='eza'                            # basic ls replacement
+      alias ls='eza --icons'                            # basic ls replacement
       alias ll='eza -l'                         # long format
       alias la='eza -la'                        # long + hidden files
       alias l='eza -lah --group-directories-first --icons'  # fancy listing
       alias lt='eza --tree --level=2 --icons'  # tree view
-      alias lg='eza -l --git'                  # long + git status
+      alias lg='eza -l --git --icons'                  # long + git status
       alias ld='eza -lD'                       # directories only
       alias lf='eza -l --only-files'           # files only
 
