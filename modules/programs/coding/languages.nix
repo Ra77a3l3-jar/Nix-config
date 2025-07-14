@@ -6,6 +6,7 @@
     clang
     clang-tools
     gnumake
+    gdb
 
     # Java
     jdk
