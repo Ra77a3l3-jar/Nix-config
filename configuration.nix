@@ -12,8 +12,7 @@
       ./modules/desktop/gnome.nix
       ./modules/core/drivers.nix
       ./modules/programs/gaming.nix
-      ./modules/programs/coding/helix.nix
-    ];
+     ];
 
     home-manager.users.raffaele = {
       imports = [ ./home.nix ]; 
@@ -68,8 +67,13 @@
      tree
      lazygit
      zoxide
+     man-pages
+     man-pages-posix
+     tldr
   ];
 
   services.flatpak.enable = true;
+
+  documentation.dev.enable = true;
    
  }
