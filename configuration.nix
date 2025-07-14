@@ -10,7 +10,6 @@
       ./modules/core/base.nix
       ./modules/programs/coding/zsh.nix
       ./modules/desktop/gnome.nix
-      ./modules/core/drivers.nix
       ./modules/programs/gaming.nix
      ];
 
