@@ -9,7 +9,7 @@
     # Sensible defaults & TPM (plugin manager)
     plugins = with pkgs.tmuxPlugins; [
       sensible   # safer key‑bindings & options
-      tpm        # Tmux Plugin Manager – installs the rest on first ⌃b I
+      pluginManager        # Tmux Plugin Manager – installs the rest on first ⌃b I
     ];
 
     # Additional plugins managed by TPM.  `tmux-which-key` gives a pop‑up cheat‑sheet
