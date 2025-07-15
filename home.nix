@@ -23,9 +23,6 @@
     ghostty
     zellij
     
-    tmux
-    tmuxPlugins.rose-pine
-
     bat
     eza
     atuin
@@ -47,5 +44,19 @@
     BROWSER = "firefox";
     TERMINAL = "ghostty";
   };
+
+  programs.tmux = {
+  enable = true;
+
+    # Enable tmux plugin manager (TPM)
+  plugins = with pkgs.tmuxPlugins; [
+    rose-pine
+  ];
+
+  extraConfig = ''
+    set -g @rose_pine_variant 'main'  # Or 'moon' or 'dawn'
+    run '~/.tmux/plugins/rose-pine/rose-pine.tmux'
+  '';
+};
 
 }
