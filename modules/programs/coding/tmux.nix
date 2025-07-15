@@ -1,37 +1,33 @@
-{ pkgs, ... }:
-{
-  programs.tmux = {
-    enable = true;
+programs.tmux = {
+  enable = true;
+  shortcut = "a";
+  baseIndex = 1;
+  newSession = true;
+  escapeTime = 0;
+  secureSocket = false;
 
-    # Pick up default tmux colour scheme; Ghostty's VibrantInk handles the palette.
-    # You can always override colours later in `extraConfig`.
+  plugins = with pkgs.tmuxPlugins; [
+    sensible
+    tpm
+    better-mouse-mode
+  ];
 
-    # Sensible defaults & TPM (plugin manager)
-    plugins = with pkgs.tmuxPlugins; [
-      sensible   # safer key‑bindings & options
-      pluginManager        # Tmux Plugin Manager – installs the rest on first ⌃b I
-    ];
+  extraConfig = ''
+    set -g default-terminal "xterm-256color"
+    set -ga terminal-overrides ",*256col*:Tc"
+    set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+    set-environment -g COLORTERM "truecolor"
 
-    # Additional plugins managed by TPM.  `tmux-which-key` gives a pop‑up cheat‑sheet
-    # like Neovim's which‑key.  They are declared here so you keep everything in Nix
-    # but fetched at runtime by TPM, avoiding manual hashes.
-    extraConfig = ''
-      # List TPM‑managed plugins ------------------------------
-      set -g @plugin 'tmux-plugins/tpm'
-      set -g @plugin 'tmux-plugins/tmux-sensible'
-      set -g @plugin 'yukidoke/tmux-which-key'
+    set-option -g mouse on
+    bind | split-window -h -c "#{pane_current_path}"
+    bind - split-window -v -c "#{pane_current_path}"
+    bind c new-window -c "#{pane_current_path}"
 
-      # Initialise TPM (keep this line at the very bottom of plugin section)
-      run '~/.tmux/plugins/tpm/tpm'
+    set -g @plugin 'tmux-plugins/tpm'
+    set -g @plugin 'tmux-plugins/tmux-sensible'
+    set -g @plugin 'yukidoke/tmux-which-key'
 
-      # ---------- Quality‑of‑life settings ----------
-      set -g mouse on          # enable mouse support (scroll, resize panes, etc.)
-      set -g history-limit 10000
+    run '~/.tmux/plugins/tpm/tpm'
+  '';
+};
 
-      # Use Ctrl‑a as the prefix?  Uncomment if you prefer:
-      # set -g prefix C-a
-      # unbind C-b
-      # bind C-a send-prefix
-    '';
-  };
-}
