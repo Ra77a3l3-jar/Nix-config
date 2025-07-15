@@ -22,6 +22,9 @@
 
     ghostty
     zellij
+    
+    tmux
+    tmuxPlugins.rose-pine
 
     bat
     eza
