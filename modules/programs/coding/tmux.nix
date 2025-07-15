@@ -9,12 +9,14 @@
     escapeTime = 0;
     secureSocket = false;
 
-    plugins = with pkgs.tmuxPlugins; [
-      sensible
-      tpm
-      better-mouse-mode
+
+    plugins = [
+      pkgs.tmuxPlugins.sensible
+      pkgs.tmuxPlugins.tpm
+      pkgs.tmuxPlugins.better-mouse-mode
     ];
 
+    
     extraConfig = ''
       set -g default-terminal "xterm-256color"
       set -ga terminal-overrides ",*256col*:Tc"
