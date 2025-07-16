@@ -11,7 +11,6 @@
       ./modules/core/base.nix
       ./modules/programs/coding/zsh.nix
       ./modules/desktop/gnome.nix
-      ./modules/programs/coding/helix.nix
     ];
 
     home-manager.users.raffaele = {
@@ -67,8 +66,12 @@
      tree
      lazygit
      zoxide
+     man-pages
+     man-pages-posix
   ];
 
   services.flatpak.enable = true;
+
+  documentation.dev.enable = true;
    
  }

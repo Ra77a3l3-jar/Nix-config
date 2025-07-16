@@ -1,68 +1,88 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
-let
-  user = "raffaele"; # change this to your actual user
-in
 {
-  system.activationScripts.helixConfig = {
-    text = ''
-      mkdir -p /home/${user}/.config/helix
+  programs.helix = {
+    enable = true;
 
-      cat > /home/${user}/.config/helix/config.toml <<'EOF'
-theme = "ayu_evolve"
+    settings = {
+      theme = "ayu_evolve";
 
-[editor]
-scrolloff = 999
-line-number = "relative"
-bufferline = "multiple"
-mouse = false
-auto-format = true
-true-color = true
-auto-completion = true
+      editor = {
+        scrolloff = 999;
+        line-number = "relative";
+        bufferline = "multiple";
+        mouse = false;
+        auto-format = true;
+        true-color = true;
+        auto-completion = true;
+        completion-replace = true;
 
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "block"
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "block";
+        };
 
-[editor.indent-guides]
-render = true
-character = "|"
-skip-levels = 1
+        indent-guides = {
+          render = true;
+          character = "|";
+          skip-levels = 1;
+        };
 
-[editor.statusline]
-left = [ "mode", "spinner", "file-name" ]
-center = [ "version-control" ]
-right = [ "diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type" ]
-separator = "│"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
-EOF
+        statusline = {
+          left = [ "mode" "spinner" "file-name" ];
+          center = [ "version-control" ];
+          right = [ "diagnostics" "selections" "position" "file-encoding" "file-line-ending" "file-type" ];
+          separator = "│";
+          mode = {
+            normal = "NORMAL";
+            insert = "INSERT";
+            select = "SELECT";
+          };
+        };
+      };
 
-      cat > /home/${user}/.config/helix/languages.toml <<'EOF'
+      language-server = {
+        zls = {
+          command = "zls";
+        };
+      };
+    };
 
-[[language]]
-name = "zig"
-language-servers = ["zls"]
-indent = { tab-width = 4, unit = "    " }
-
-[[language]]
-name = "c"
-language-servers = ["clangd"]
-indent = { tab-width = 4, unit = "    " }
-
-[[language]]
-name = "cpp"
-language-servers = ["clangd"]
-indent = { tab-width = 4, unit = "    " }
-
-[language-server.zls]
-command = "zls"
-EOF
-
-      chown -R ${user}:${user} /home/${user}/.config/helix
-    '';
+    languages = {
+      language = [
+        {
+          name = "java";
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
+        }
+        {
+          name = "zig";
+          language-servers = [ "zls" ];
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
+        }
+        {
+          name = "c";
+          language-servers = [ "clangd" ];
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
+        }
+        {
+          name = "cpp";
+          language-servers = [ "clangd" ];
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
+        }
+      ];
+    };
   };
 }
-

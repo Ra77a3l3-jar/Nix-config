@@ -20,6 +20,10 @@
       alias zl='zellij'
       alias cl='clear'
       alias hs='history'
+
+      alias ltree='eza --tree --level=5 --long --icons'
+      alias lg='eza -l --git --icons'
+      alias ls='eza --icons'
     '';
   };
 
