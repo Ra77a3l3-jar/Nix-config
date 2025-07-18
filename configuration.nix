@@ -11,6 +11,7 @@
       ./modules/programs/coding/zsh.nix
       ./modules/desktop/gnome.nix
       ./modules/programs/gaming.nix
+      ./modules/core/drivers.nix
      ];
 
     home-manager.users.raffaele = {

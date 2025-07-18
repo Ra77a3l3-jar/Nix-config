@@ -21,6 +21,7 @@
       alias cl='clear'
       alias hs='history'
       alias cat='bat'
+      alias tx='tmux'
 
       alias ltree='eza --tree --level=10 --long --icons'
 

@@ -22,6 +22,7 @@
 
     ghostty
     zellij
+    tmux
     
     bat
     eza
@@ -31,6 +32,7 @@
     fzf
     fd
     ripgrep
+    yazi
 
     obsidian
     libreoffice
