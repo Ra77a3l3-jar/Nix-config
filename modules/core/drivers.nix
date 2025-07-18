@@ -18,7 +18,8 @@
     pciutils       # for lspci
     mesa-demos     # for glxinfo, glxgears
     vulkan-tools   # for vulkaninfo
-    radeontop
+    amdgpu_top
+    nvtopPackages.amd
     glmark2
     vkmark
   ];
