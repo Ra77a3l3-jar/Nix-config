@@ -1,21 +1,25 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Ensure required firmware is installed
   hardware.enableRedistributableFirmware = true;
 
-  # Enable AMD GPU driver
+  # Load AMDGPU early
   boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  # Vulkan support (optional but recommended)
-  hardware.opengl = {
+  # New NixOS 25.05 graphics options
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      mesa.drivers
-    ];
+    extraPackages = with pkgs; [ mesa ];
   };
-}
 
+  # Tools to verify GPU and Vulkan support
+  environment.systemPackages = with pkgs; [
+    pciutils       # for lspci
+    mesa-demos     # for glxinfo, glxgears
+    vulkan-tools   # for vulkaninfo
+    radeontop
+    glmark2
+    vkmark
+  ];
+}
