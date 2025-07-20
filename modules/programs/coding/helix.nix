@@ -15,7 +15,6 @@
         auto-format = true;
         true-color = true;
         auto-completion = true;
-        completion-replace = true;
 
         cursor-shape = {
           insert = "bar";
@@ -39,12 +38,6 @@
             insert = "INSERT";
             select = "SELECT";
           };
-        };
-      };
-
-      language-server = {
-        zls = {
-          command = "zls";
         };
       };
     };
