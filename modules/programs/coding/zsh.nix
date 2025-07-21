@@ -9,6 +9,7 @@
     ohMyZsh = {
       enable = true;
       theme = "robbyrussell";
+      plugins = [ "colored-man-pages" ];
     };
     
     interactiveShellInit = ''
