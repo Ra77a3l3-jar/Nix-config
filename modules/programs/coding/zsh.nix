@@ -15,6 +15,9 @@
     interactiveShellInit = ''
       export PATH=$HOME/.nix-profile/bin:$PATH
       eval "$(zoxide init zsh)"
+
+      # Use bat to display colored man pages
+      export MANPAGER="sh -c 'col -bx | bat --language=man --plain'"
     
       alias ex='exit'
       alias gs='git status'
