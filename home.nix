@@ -21,7 +21,8 @@
   home.packages = with pkgs; [
 
     ghostty
-    zellij
+    warp-terminal
+    tmux
 
     bat
     eza
@@ -43,7 +44,7 @@
   home.sessionVariables = {
     EDITOR = "helix";
     BROWSER = "firefox";
-    TERMINAL = "ghostty";
+    TERM = "ghostty";
   };
 
 }
