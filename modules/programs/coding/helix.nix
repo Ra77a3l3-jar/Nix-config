@@ -75,6 +75,14 @@
             unit = "    ";
           };
         }
+        {
+          name = "python";
+          language-servers = [ "pylsp" ];
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
+        }
       ];
     };
   };
