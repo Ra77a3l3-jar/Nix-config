@@ -23,6 +23,7 @@
 
     ghostty
     warp-terminal
+    tmux
 
     bat
     eza
