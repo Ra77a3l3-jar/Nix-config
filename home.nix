@@ -11,6 +11,7 @@
     ./modules/programs/coding/languages.nix
     ./modules/programs/coding/git.nix
     ./modules/programs/coding/helix.nix
+    ./modules/programs/coding/python.nix
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
