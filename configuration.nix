@@ -68,6 +68,7 @@
      zoxide
      man-pages
      man-pages-posix
+     eza
   ];
 
   services.flatpak.enable = true;

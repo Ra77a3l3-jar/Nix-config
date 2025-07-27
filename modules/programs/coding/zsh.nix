@@ -24,7 +24,9 @@
 
       alias ltree='eza --tree --level=5 --long --icons'
       alias lg='eza -l --git --icons'
-      alias ls='eza --icons'
+      alias ls='eza --icons -l --no-git'
+      alias l='eza  --git-repos --icons -l'
+      alias lt='eza --git --tree -l --icons'
     '';
   };
 
