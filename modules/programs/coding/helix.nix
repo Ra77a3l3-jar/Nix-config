@@ -17,7 +17,7 @@
         auto-completion = true;
 
         cursor-shape = {
-          insert = "bar";
+          insert = "block";
           normal = "block";
           select = "block";
         };
@@ -34,9 +34,9 @@
           right = [ "diagnostics" "selections" "position" "file-encoding" "file-line-ending" "file-type" ];
           separator = "│";
           mode = {
-            normal = "NORMAL";
-            insert = "INSERT";
-            select = "SELECT";
+            normal = "NOR";
+            insert = "INS";
+            select = "SEL";
           };
         };
       };
