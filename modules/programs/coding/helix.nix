@@ -43,8 +43,8 @@
     };
 
     themes = {
-      rose-pine-primeagean = {
-        inherits = "rose-pine";
+      aye_custom = {
+        inherits = "aye_evolve";
 
         # Make the background pitch black
         "ui.background" = "black";
@@ -58,18 +58,6 @@
 
         # Syntax tweaks (Prime-like)
         "comment" = "#6e6a86";
-        "constant" = "#9ccfd8";
-        "string" = "#f6c177";
-        "keyword" = "#f07178";        # more saturated pink
-        "function" = "#c792ea";
-        "type" = "#82aaff";
-        "constructor" = "#ea9a97";
-        "label" = "#f6c177";
-        "operator" = "#c4a7e7";
-        "variable" = "#e0def4";
-        "attribute" = "#f6c177";
-        "namespace" = "#c4a7e7";
-        "special" = "#eb6f92";
       };
     };
 
