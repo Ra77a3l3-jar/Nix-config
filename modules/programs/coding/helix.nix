@@ -83,6 +83,14 @@
             unit = "    ";
           };
         }
+        {
+          name = "rust";
+          language-servers = [ "rust-analyzer" ];
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
+        }
       ];
     };
   };
