@@ -9,9 +9,6 @@
     gdb
     cmake
 
-    # Graphics
-    ncurses
-
     # Java
     jdk
     gradle
