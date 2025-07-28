@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      theme = "rose-pine-primeagean";
+      theme = "aye_evolve";
 
       editor = {
         scrolloff = 999;
