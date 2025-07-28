@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      theme = "ayu_evolve";
+      theme = "rose-pine-primeagean";
 
       editor = {
         scrolloff = 999;
@@ -41,6 +41,10 @@
         };
       };
     };
+
+    themes = {
+        "rose-pine-primeagean" = ./helix-theme/rose-pine-thePrimeages.toml;
+     };
 
     languages = {
       language = [
