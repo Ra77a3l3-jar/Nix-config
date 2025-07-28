@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      theme = "rose-pine";
+      theme = "rose_pine";
 
       editor = {
         scrolloff = 999;
