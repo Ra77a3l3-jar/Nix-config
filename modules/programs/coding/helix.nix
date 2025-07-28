@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      theme = "rose-pine-primeagean";
+      theme = "rose-pine";
 
       editor = {
         scrolloff = 999;
@@ -41,10 +41,6 @@
         };
       };
     };
-
-    themes = {
-        "rose-pine-primeagean" = ./helix-theme/rose-pine-thePrimeages.toml;
-     };
 
     languages = {
       language = [
