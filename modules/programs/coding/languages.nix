@@ -7,6 +7,10 @@
     clang-tools
     gnumake
     gdb
+    cmake
+
+    # Graphics
+    ncurses
 
     # Java
     jdk
@@ -15,6 +19,9 @@
     # Zig
     zig
     zls
+
+    # Rust
+    rustup
   ];
 
   home.sessionVariables = {
