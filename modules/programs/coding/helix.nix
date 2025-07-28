@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      theme = "ayu_custom";
+      theme = "ayu_evolve";
 
       editor = {
         scrolloff = 999;
@@ -41,26 +41,6 @@
         };
       };
     };
-
-    themes = {
-      aye_custom = {
-        inherits = "aye_evolve";
-
-        # Make the background pitch black
-        "ui.background" = "black";
-
-        # Cursor and selection tweaks
-        "ui.cursor" = "#ebbcba";
-        "ui.cursor.primary" = "#ebbcba";
-        "ui.selection" = "#2a273f";
-        "ui.statusline" = "#191724";
-        "ui.statusline.inactive" = "#1f1d2e";
-
-        # Syntax tweaks (Prime-like)
-        "comment" = "#6e6a86";
-      };
-    };
-
 
     languages = {
       language = [
