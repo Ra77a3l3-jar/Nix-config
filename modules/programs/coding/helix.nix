@@ -5,7 +5,7 @@
     enable = true;
 
     settings = {
-      theme = "aye_evolve";
+      theme = "ayu_evolve";
 
       editor = {
         scrolloff = 999;
