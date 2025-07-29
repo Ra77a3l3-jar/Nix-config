@@ -9,8 +9,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/core/base.nix
-      ./modules/programs/coding/zsh.nix
       ./modules/desktop/gnome.nix
+
+      ./modules/programs/coding/editors/default.nix
     ];
 
     home-manager.users.raffaele = {
