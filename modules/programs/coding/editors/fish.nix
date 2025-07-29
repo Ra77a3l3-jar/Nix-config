@@ -1,54 +1,65 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.fish = {
     enable = true;
 
     interactiveShellInit = ''
+      # Remove greeting
       set -g fish_greeting ""
+
+      # Explicit PATH additions
+      fish_add_path $HOME/.local/bin
+      fish_add_path $HOME/.nix-profile/bin
+
+      # Environment variable
+      set -gx MANPAGER batman
+
+      # zoxide init
+      if type -q zoxide
+        zoxide init fish | source
+      end
     '';
 
     shellAliases = {
-      ll = "ls -alF";
-      la = "ls -A";
-      l = "ls -CF";
+      ex = "exit";
       gs = "git status";
-      ga = "git add .";
-      gc = "git commit";
-      gp = "git push";
-      ".." = "cd ..";
-    };
+      zl = "zellij";
+      cl = "clear";
+      hs = "history";
 
-    plugins = [
-      {
-        name = "foreign-env";
-        src = pkgs.fishPlugins.foreign-env.src;
-      }
-      {
-        name = "z";
-        src = pkgs.fishPlugins.z.src;
-      }
-      {
-        name = "autopair";
-        src = pkgs.fishPlugins.autopair.src;
-      }
-      {
-        name = "done";
-        src = pkgs.fishPlugins.done.src;
-      }
-    ];
+      ltree = "eza --tree --level=5 --long --icons";
+      lg = "eza -l --git --icons";
+      ls = "eza -l --no-git --icons";
+      l = "eza -l --git --icons";
+      lt = "eza --git --tree -l --icons";
+    };
 
     promptInit = ''
       function fish_prompt
-        set_color cyan
-        echo -n (prompt_pwd)
+        set -l cwd (prompt_pwd)
+        set -l user (whoami)
+        set -l host (hostname -s)
+        set -l git_branch ""
+        if type -q git
+          set -l branch (git rev-parse --abbrev-ref HEAD ^/dev/null 2>/dev/null)
+          if test -n "$branch"
+            set git_branch " [$branch]"
+          end
+        end
+        set_color blue
+        echo -n "$user@$host"
         set_color normal
-        echo -n ' ❯ '
+        echo -n ":"
+        set_color cyan
+        echo -n "$cwd"
+        set_color green
+        echo -n "$git_branch"
+        set_color normal
+        echo -n "\n❯ "
       end
     '';
   };
 
-  # Optional if you want to make fish the default shell
-  # home.shell = pkgs.fish;
+  # users.defaultUserShell = pkgs.fish;
 }
-

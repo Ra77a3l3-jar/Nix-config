@@ -10,8 +10,9 @@
       ./hardware-configuration.nix
       ./modules/core/base.nix
       ./modules/desktop/gnome.nix
-
-      ./modules/programs/coding/editors/default.nix
+      
+      ./modules/programs/coding/editors/zsh.nix
+      ./modules/programs/coding/editors/fish.nix
     ];
 
     home-manager.users.raffaele = {

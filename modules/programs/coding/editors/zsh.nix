@@ -12,7 +12,8 @@
     };
     
     interactiveShellInit = ''
-      export PATH="$HOME/.local/bin:$HOME/.nix-profile/bin:$PATH"
+      export PATH="$HOME/.local/bin:$PATH"
+      export PATH="$HOME/.nix-profile/bin:$PATH"
       export MANPAGER="batman"
       eval "$(zoxide init zsh)"
     
