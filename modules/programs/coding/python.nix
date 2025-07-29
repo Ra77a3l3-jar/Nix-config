@@ -21,6 +21,7 @@
       # Basic utilities
       requests
       pip
+      conda
     ]))
     
     # Python LSP server for Helix
