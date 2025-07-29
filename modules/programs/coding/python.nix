@@ -21,10 +21,10 @@
       # Basic utilities
       requests
       pip
-      conda
     ]))
     
     # Python LSP server for Helix
     python3Packages.python-lsp-server
+    conda
   ];
 }
