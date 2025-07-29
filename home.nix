@@ -24,7 +24,6 @@
     ghostty
     warp-terminal
     tmux
-    fish
 
     bat
     eza
