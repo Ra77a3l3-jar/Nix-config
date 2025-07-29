@@ -26,13 +26,7 @@
     # Python LSP server for Helix
     python3Packages.python-lsp-server
 
-    {
-      programs.conda = {
-        enable = true;
-        autoInit = true; # This makes sure the shell initializes Conda
-      };
-    }
-
+    conda
     
   ];
 }
