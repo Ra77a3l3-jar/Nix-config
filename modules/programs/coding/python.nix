@@ -29,7 +29,6 @@
     {
       programs.conda = {
         enable = true;
-        package = pkgs.miniconda3;
         autoInit = true; # This makes sure the shell initializes Conda
       };
     }
