@@ -24,6 +24,7 @@
     ghostty
     warp-terminal
     tmux
+    code-cursor
 
     bat
     eza
