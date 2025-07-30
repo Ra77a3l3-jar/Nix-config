@@ -16,6 +16,9 @@
       export PATH="$HOME/.nix-profile/bin:$PATH"
       export MANPAGER="batman"
       eval "$(zoxide init zsh)"
+
+      alias hm-reload='source ~/.nix-profile/etc/profile.d/hm-session-vars.sh'
+      aliad nos-rebuild='nixos-rebuild switch --flake ./#nixos --verbose'
     
       alias ex='exit'
       alias gs='git status'
