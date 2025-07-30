@@ -18,7 +18,7 @@
       eval "$(zoxide init zsh)"
 
       alias hm-reload='source ~/.nix-profile/etc/profile.d/hm-session-vars.sh'
-      aliad nos-rebuild='nixos-rebuild switch --flake ./#nixos --verbose'
+      alias nos-rebuild='nixos-rebuild switch --flake ./#nixos --verbose'
     
       alias ex='exit'
       alias gs='git status'

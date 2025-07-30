@@ -11,8 +11,8 @@
     cursor-style = "bar"
     cursor-style-blink = true
     scrollback-limit = 20000
-    window-padding-x = 15
-    window-padding-y = 15
+    window-padding-x = 10
+    window-padding-y = 10
     window-save-state = "always"
     background-opacity = 0.96
     background-blur-radius = 25
