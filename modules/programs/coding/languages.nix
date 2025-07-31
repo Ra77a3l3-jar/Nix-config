@@ -22,7 +22,7 @@
 
     # Go
     go
-    golsp
+    gopls
   ];
 
   home.sessionVariables = {
