@@ -19,6 +19,10 @@
 
     # Rust
     rustup
+
+    # Go
+    go
+    golsp
   ];
 
   home.sessionVariables = {
