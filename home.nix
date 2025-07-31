@@ -22,9 +22,7 @@
   home.packages = with pkgs; [
 
     ghostty
-    warp-terminal
     tmux
-    code-cursor
 
     bat
     eza
