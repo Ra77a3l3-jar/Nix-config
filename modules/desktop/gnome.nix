@@ -37,7 +37,21 @@
     yaru-theme
   ];
 
+    # Install Ubuntu Nerd Font
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Ubuntu" ]; })
+  ];
+
+  # Enable dconf (required for GNOME font settings)
   programs.dconf.enable = true;
+
+  # Set the default interface fonts in GNOME
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      font-name = "Ubuntu Nerd Font 14";
+      monospace-font-name = "UbuntuMono Nerd Font 14";
+    };
+  };
 
   environment.gnome.excludePackages = (with pkgs; [
 
