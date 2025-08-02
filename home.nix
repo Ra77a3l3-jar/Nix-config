@@ -47,4 +47,17 @@
     TERM = "ghostty";
   };
 
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Ubuntu" ]; })
+  ];
+
+  programs.dconf.enable = true;
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      font-name = "Ubuntu Nerd Font 14";
+      monospace-font-name = "UbuntuMono Nerd Font 14";
+    };
+  };
+
 }
