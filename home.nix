@@ -39,8 +39,6 @@
 
     discord
     bottles
-
-    pkgs.nerd-fonts.ubuntu
         
   ];
 
@@ -50,13 +48,5 @@
     TERM = "ghostty";
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      font-name = "Ubuntu Nerd Font 12";
-      monospace-font-name = "UbuntuMono Nerd Font 12";
-    };
-  };
-
-  fonts.fontconfig.enable = true;
-
+  
 }
