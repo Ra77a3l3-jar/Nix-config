@@ -38,6 +38,8 @@
 
     discord
     bottles
+
+    (nerdfonts.override { fonts = [ "Ubuntu" ]; })
         
   ];
 
@@ -46,10 +48,6 @@
     BROWSER = "firefox";
     TERM = "ghostty";
   };
-
-  home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "Ubuntu" ]; })
-  ];
 
   programs.dconf.enable = true;
 
