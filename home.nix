@@ -51,8 +51,8 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      font-name = "Ubuntu Nerd Font 14";
-      monospace-font-name = "UbuntuMono Nerd Font 14";
+      font-name = "Ubuntu Nerd Font 12";
+      monospace-font-name = "UbuntuMono Nerd Font 12";
     };
   };
 
