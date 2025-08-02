@@ -49,13 +49,13 @@
     TERM = "ghostty";
   };
 
-  programs.dconf.enable = true;
-
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       font-name = "Ubuntu Nerd Font 14";
       monospace-font-name = "UbuntuMono Nerd Font 14";
     };
   };
+
+  fonts.fontconfig.enable = true;
 
 }
