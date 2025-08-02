@@ -39,7 +39,7 @@
     discord
     bottles
 
-    (nerdfonts.override { fonts = [ "Ubuntu" ]; })
+    pkgs.nerd-fonts.ubuntu
         
   ];
 
