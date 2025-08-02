@@ -23,6 +23,7 @@
 
     ghostty
     tmux
+    kitty
 
     bat
     eza
