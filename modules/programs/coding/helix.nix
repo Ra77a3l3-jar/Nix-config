@@ -7,6 +7,12 @@
     settings = {
       theme = "ayu_evolve";
 
+      keys.normal.space = {
+          e = ":sh yazi"
+          g = ":sh lazygit"
+          d = ":sh lazydocker"
+      }
+
       editor = {
         scrolloff = 999;
         line-number = "relative";
@@ -36,7 +42,7 @@
           mode = {
             normal = "NOR";
             insert = "INS";
-            select = "SEL";
+            select = "SEL";       
           };
         };
       };

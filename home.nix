@@ -36,6 +36,8 @@
     ripgrep
     yazi
 
+    lazydocker
+
     obsidian
     libreoffice
 
