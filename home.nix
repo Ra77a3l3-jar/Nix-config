@@ -24,6 +24,7 @@
 
     ghostty
     tmux
+    code-cursor
 
     bat
     eza
