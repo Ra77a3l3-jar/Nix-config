@@ -11,7 +11,7 @@
           e = ":sh yazi";
           g = ":sh lazygit";
           d = ":sh lazydocker";
-      }
+      };
 
       editor = {
         scrolloff = 999;
