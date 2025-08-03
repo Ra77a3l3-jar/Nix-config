@@ -15,6 +15,9 @@
       export PATH="$HOME/.local/bin:$PATH"
       export PATH="$HOME/.nix-profile/bin:$PATH"
       export MANPAGER="batman"
+      export EDITOR="hx"
+      export VISUAL="hx"
+      
       eval "$(zoxide init zsh)"
 
       alias hm-reload='source ~/.nix-profile/etc/profile.d/hm-session-vars.sh'
