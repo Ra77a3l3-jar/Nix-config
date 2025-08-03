@@ -34,6 +34,7 @@
     fzf
     fd
     ripgrep
+    yazi
 
     obsidian
     libreoffice
