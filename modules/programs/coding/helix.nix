@@ -8,9 +8,9 @@
       theme = "ayu_evolve";
 
       keys.normal.space = {
-          e = ":sh yazi"
-          g = ":sh lazygit"
-          d = ":sh lazydocker"
+          e = ":sh yazi";
+          g = ":sh lazygit";
+          d = ":sh lazydocker";
       }
 
       editor = {
