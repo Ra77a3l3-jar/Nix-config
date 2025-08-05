@@ -45,7 +45,7 @@
     bottles
 
     youtube-tui
-    yt-dpl
+    yt-dlp
     mpv
     ollama
     lmstudio
