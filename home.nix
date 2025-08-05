@@ -47,8 +47,11 @@
     youtube-tui
     yt-dlp
     mpv
+    jq
+    
     ollama
     lmstudio
+
     webex
         
   ];
