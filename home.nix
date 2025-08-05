@@ -46,6 +46,7 @@
 
     youtube-tui
     opencode
+    webex
         
   ];
 
