@@ -44,11 +44,6 @@
     discord
     bottles
 
-    nuclear
-  
-    ollama
-    lmstudio
-
     webex
         
   ];
