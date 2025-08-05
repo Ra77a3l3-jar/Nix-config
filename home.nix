@@ -43,12 +43,7 @@
 
     discord
     bottles
-
-    youtube-tui
-    yt-dlp
-    mpv
-    jq
-    
+  
     ollama
     lmstudio
 
