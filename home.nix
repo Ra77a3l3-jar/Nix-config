@@ -45,7 +45,10 @@
     bottles
 
     youtube-tui
-    opencode
+    yt-dpl
+    mpv
+    ollama
+    lmstudio
     webex
         
   ];
