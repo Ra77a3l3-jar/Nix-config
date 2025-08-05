@@ -43,6 +43,9 @@
 
     discord
     bottles
+
+    youtube-tui
+    opencode
         
   ];
 
