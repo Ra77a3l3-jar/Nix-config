@@ -45,6 +45,8 @@
     bottles
 
     webex
+
+    resonance
         
   ];
 
