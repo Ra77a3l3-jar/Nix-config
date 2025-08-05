@@ -43,6 +43,8 @@
 
     discord
     bottles
+
+    nuclear
   
     ollama
     lmstudio
