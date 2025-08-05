@@ -45,7 +45,6 @@
     bottles
 
     webex
-    lollypop
         
   ];
 
