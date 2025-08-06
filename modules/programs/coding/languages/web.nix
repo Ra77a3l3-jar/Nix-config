@@ -11,7 +11,7 @@
 
     # Web frameworks & build tools (frontend)
     nodePackages.live-server
-    nodePackages.vls
+    vscode-extensions.vue.volar
     nodePackages.tailwindcss
 
     # PHP & LSP
