@@ -6,7 +6,7 @@
       {
         name = "c";
         scope = "source.c";
-        language-servers = [ "clangd" ];
+        language-servers = [ "clangd" "ltex-ls" ];
         indent = {
           tab-width = 4;
           unit = "    ";
@@ -69,7 +69,7 @@
       {
         name = "markdown";
         scope = "text.markdown";
-        language-servers = [ "marksman" ];
+        language-servers = [ "marksman" "ltex-ls" ];
         indent = {
           tab-width = 4;
           unit = "    ";
@@ -80,8 +80,8 @@
         scope = "source.nix";
         language-servers = [ "nil" ];
         indent = {
-          tab-width = 4;
-          unit = "    ";
+          tab-width = 2;
+          unit = "  ";
         };
       }
       {

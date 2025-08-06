@@ -15,7 +15,6 @@
 
     # PHP & LSP
     php
-    #phpPackages.composer
     phpactor  # PHP LSP
 
     # Extra Tools (full-stack, APIs, debugging)
