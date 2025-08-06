@@ -29,11 +29,19 @@
       alias cl='clear'
       alias hs='history'
 
-      alias ltree='eza --tree --level=5 --long --icons'
+      alias la='eza -la --icons'
+      alias ltree='eza --tree --level=3 --long --git --icons'
+      alias l='eza -l --icons --only-files'
+      alias ld='eza -l --icons --only-dirs'
+      alias lsd='eza --icons --only-dirs'
+      alias ls='eza -l --icons --sort=size'
+      alias ltime='eza -l --icons --sort=modified'
+      alias lnew='eza -l --icons --sort=modified --reverse'
+      alias lperm='eza -l --icons --group-directories-first'
+      alias lbig='eza -l --icons --sort=size | head -n 10'
       alias lg='eza -l --git --icons'
-      alias ls='eza -l --no-git --icons'
-      alias l='eza  -l --git --icons'
       alias lt='eza --git --tree -l --icons'
+
     '';
   };
 
