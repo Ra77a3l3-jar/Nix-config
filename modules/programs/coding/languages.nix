@@ -2,14 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    # C / C++
-    clang
-    clang-tools
-    gnumake
-    gdb
-    cmake
-
-    # Java
+        # Java
     jdk
     gradle
 
