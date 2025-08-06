@@ -1,12 +1,12 @@
 { ... }:
 {
   imports = [
-    #./c.nix
+    ./c.nix
     #./java.nix
-    #./rust.nix
-    #./zig.nix
+    ./rust.nix
+    ./zig.nix
     #./web.nix
-    #./go.nix
+    ./go.nix
     ./python.nix
     #./other.nix
   ];
