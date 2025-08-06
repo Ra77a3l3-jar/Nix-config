@@ -15,6 +15,9 @@
     ./modules/programs/coding/editor/jetBrains.nix
 
     ./modules/programs/coding/languages/default.nix
+
+    ./modules/programs/coding/shell/nushell.nix
+
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username

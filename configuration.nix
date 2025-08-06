@@ -12,7 +12,6 @@
       ./modules/desktop/gnome.nix
 
       ./modules/programs/coding/shell/default.nix
-      ./modules/programs/coding/shell/nushell.nix
     ];
 
     home-manager.users.raffaele = {
