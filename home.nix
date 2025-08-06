@@ -15,7 +15,6 @@
     ./modules/programs/coding/editor/helix/default.nix
     ./modules/programs/coding/editor/jetBrains.nix
 
-    ./modules/programs/coding/languages.nix
     ./modules/programs/coding/languages/default.nix
   ];
   
