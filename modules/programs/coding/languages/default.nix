@@ -8,6 +8,6 @@
     #./web.nix
     ./go.nix
     ./python.nix
-    #./other.nix
+    ./other.nix
   ];
 }
