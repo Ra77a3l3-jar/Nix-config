@@ -13,11 +13,7 @@
     # YAML / TOML / JSON
     nodePackages.yaml-language-server
     taplo         # TOML LSP
-
-    # XML
-    libxml2
-    xmlformat
-
+    
     # Grammar / Spellcheck
     ltex-ls
   ];

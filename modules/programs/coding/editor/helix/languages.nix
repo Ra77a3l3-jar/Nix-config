@@ -112,14 +112,6 @@
         };
       }
       {
-        name = "xml";
-        scope = "text.xml";
-        indent = {
-          tab-width = 4;
-          unit = "    ";
-        };
-      }
-      {
         name = "javascript";
         scope = "source.js";
         language-servers = [ "typescript-language-server" ];
@@ -141,15 +133,6 @@
         name = "php";
         scope = "source.php";
         language-servers = [ "phpactor" ];
-        indent = {
-          tab-width = 4;
-          unit = "    ";
-        };
-      }
-      {
-        name = "vue";
-        scope = "source.vue";
-        language-servers = [ "vls" ];
         indent = {
           tab-width = 4;
           unit = "    ";

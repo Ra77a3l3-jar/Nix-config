@@ -22,6 +22,7 @@
     jq            # JSON CLI parser
     curl          # richieste HTTP
     sqlite        # utile per piccoli DB
+    sqls
   ];
 }
 
