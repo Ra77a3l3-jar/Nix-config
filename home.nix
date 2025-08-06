@@ -13,6 +13,7 @@
     ./modules/programs/coding/helix.nix
     ./modules/programs/coding/python.nix
     ./modules/programs/coding/jetBrains.nix
+    ./modules/programs/coding/tmux.nix
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
