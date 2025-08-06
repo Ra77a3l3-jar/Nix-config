@@ -35,6 +35,27 @@
       lt = "eza --git --tree -l --icons";
     };
 
+    shellAliases = {
+      ex = "exit";
+      gs = "git status";
+      zl = "zellij";
+      cl = "clear";
+      hs = "history";
+
+      la = "eza -la --icons";
+      ltree = "eza --tree --level=3 --long --git --icons";
+      l = "eza -l --icons --only-files";
+      ld = "eza -l --icons --only-dirs";
+      lsd = "eza --icons --only-dirs";
+      ls = "eza -l --icons --sort=size";
+      ltime = "eza -l --icons --sort=modified";
+      lnew = "eza -l --icons --sort=modified --reverse";
+      lperm = "eza -l --icons --group-directories-first";
+      lbig = "eza -l --icons --sort=size | head -n 10";
+      lg = "eza -l --git --icons";
+      lt = "eza --git --tree -l --icons";
+};
+
     promptInit = ''
       function fish_prompt
         set -l cwd (prompt_pwd)
