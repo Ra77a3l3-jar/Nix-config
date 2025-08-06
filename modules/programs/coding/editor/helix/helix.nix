@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.helix = {
@@ -6,13 +6,7 @@
 
     settings = {
       theme = "ayu_evolve";
-
-      keys.normal.space = {
-          e = ":sh yazi";
-          g = ":sh lazygit";
-          d = ":sh lazydocker";
-      };
-
+      
       editor = {
         scrolloff = 999;
         line-number = "relative";
@@ -42,70 +36,10 @@
           mode = {
             normal = "NOR";
             insert = "INS";
-            select = "SEL";       
+            select = "SEL";
           };
         };
       };
-    };
-
-    languages = {
-      language = [
-        {
-          name = "java";
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
-        {
-          name = "zig";
-          language-servers = [ "zls" ];
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
-        {
-          name = "c";
-          language-servers = [ "clangd" ];
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
-        {
-          name = "cpp";
-          language-servers = [ "clangd" ];
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
-        {
-          name = "python";
-          language-servers = [ "pylsp" ];
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
-        {
-          name = "rust";
-          language-servers = [ "rust-analyzer" ];
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
-        {
-          name = "go";
-          language-servers = [ "gopls" ];
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
-      ];
     };
   };
 }

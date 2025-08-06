@@ -7,13 +7,16 @@
     
   imports = [
     ./modules/programs/coding/terminals/ghostty.nix
+    ./modules/programs/coding/terminals/tmux.nix
+
     ./modules/programs/flatpak.nix
-    ./modules/programs/coding/languages.nix
     ./modules/programs/coding/git.nix
-    ./modules/programs/coding/helix.nix
-    ./modules/programs/coding/python.nix
+    
+    ./modules/programs/coding/editor/helix/default.nix
     ./modules/programs/coding/jetBrains.nix
-    ./modules/programs/coding/tmux.nix
+
+    ./modules/programs/coding/languages.nix
+    ./modules/programs/coding/languages/python.nix
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
