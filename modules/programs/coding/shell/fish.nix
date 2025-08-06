@@ -20,21 +20,7 @@
         zoxide init fish | source
       end
     '';
-
-    shellAliases = {
-      ex = "exit";
-      gs = "git status";
-      zl = "zellij";
-      cl = "clear";
-      hs = "history";
-
-      ltree = "eza --tree --level=5 --long --icons";
-      lg = "eza -l --git --icons";
-      ls = "eza -l --no-git --icons";
-      l = "eza -l --git --icons";
-      lt = "eza --git --tree -l --icons";
-    };
-
+    
     shellAliases = {
       ex = "exit";
       gs = "git status";
