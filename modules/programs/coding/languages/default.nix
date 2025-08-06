@@ -2,7 +2,7 @@
 {
   imports = [
     ./c.nix
-    #./java.nix
+    ./java.nix
     ./rust.nix
     ./zig.nix
     #./web.nix
