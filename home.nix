@@ -16,7 +16,7 @@
 
     ./modules/programs/coding/languages/default.nix
 
-    ./modules/programs/coding/shell/default.nix
+    ./modules/programs/coding/shell/nushell.nix
   ];
   
   home.username = "raffaele"; # Replace 'root' with your actual username
