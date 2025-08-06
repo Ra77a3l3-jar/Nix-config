@@ -11,8 +11,7 @@
       ./modules/core/base.nix
       ./modules/desktop/gnome.nix
       
-      ./modules/programs/coding/shell/zsh.nix
-      ./modules/programs/coding/shell/fish.nix
+      ./modules/programs/coding/shell/default.nix
     ];
 
     home-manager.users.raffaele = {
