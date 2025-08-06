@@ -4,13 +4,14 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
+    enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
+
     ohMyZsh = {
       enable = true;
       theme = "robbyrussell";
     };
-    
+
     interactiveShellInit = ''
       export PATH="$HOME/.local/bin:$PATH"
       export PATH="$HOME/.nix-profile/bin:$PATH"
@@ -41,9 +42,9 @@
       alias lbig='eza -l --icons --sort=size | head -n 10'
       alias lg='eza -l --git --icons'
       alias lt='eza --git --tree -l --icons'
-
     '';
   };
 
   users.defaultUserShell = pkgs.zsh;
 }
+
