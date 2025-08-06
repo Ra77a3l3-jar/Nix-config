@@ -23,7 +23,6 @@
   home.packages = with pkgs; [
 
     ghostty
-    tmux
     code-cursor
 
     bat
