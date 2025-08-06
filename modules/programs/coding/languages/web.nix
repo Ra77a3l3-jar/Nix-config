@@ -9,11 +9,8 @@
     nodePackages.vscode-langservers-extracted  # HTML, CSS, JSON, ESLint, etc.
     nodePackages.eslint
 
-    # Dev tools
-    nodePackages.live-server
-    nodePackages.vite
-
     # Web frameworks & build tools (frontend)
+    nodePackages.live-server
     nodePackages.vue
     nodePackages.tailwindcss
 
