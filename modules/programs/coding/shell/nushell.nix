@@ -33,18 +33,11 @@
       alias lnew = eza -l --icons --sort=modified --reverse
       alias lperm = eza -l --icons --group-directories-first
       alias lbig = eza -l --icons --sort=size | take 10
+      alias lg = eza -l --git --icons
       alias lt = eza --git --tree -l --icons
 
       # zoxide init for nushell
       use ~/.zoxide.nu
     '';
-
-    extraConfigFiles = {
-      ".zoxide.nu".text = ''
-        # This is where zoxide's nushell init script would go
-        # You can generate it with: zoxide init nushell > ~/.zoxide.nu
-      '';
-    };
   };
-
 }
