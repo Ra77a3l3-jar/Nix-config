@@ -6,8 +6,7 @@
   nixpkgs.config.allowUnfree = true;
     
   imports = [
-    ./modules/programs/coding/terminals/ghostty.nix
-    ./modules/programs/coding/terminals/tmux.nix
+    ./modules/programs/coding/terminals/default.nix
 
     ./modules/programs/flatpak.nix
     ./modules/programs/coding/git.nix
