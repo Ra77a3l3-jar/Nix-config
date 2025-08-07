@@ -8,5 +8,6 @@
 
     nodePackages.yaml-language-server
     taplo         # TOML LSP
+    # xml has no lsp for helix
   ];
 }
