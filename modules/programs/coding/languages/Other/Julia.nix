@@ -15,7 +15,6 @@
 
   home.packages = with pkgs; [
     julia
-    julia-language-server
   ];
 }
 
