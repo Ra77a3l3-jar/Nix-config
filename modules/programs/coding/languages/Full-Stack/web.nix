@@ -3,20 +3,35 @@
     {
       name = "vue";
       scope = "source.vue";
-      language-servers = [ "vue-language-server" ];
+      indent = {
+        tab-width = 4;
+        unit = "    ";
+      };
     }
     {
       name = "svelte";
       scope = "source.svelte";
       language-servers = [ "svelteserver" ];
+      indent = {
+        tab-width = 4;
+        unit = "    ";
+      };
     }
     {
       name = "php";
       scope = "source.php";
+      indent = {
+        tab-width = 4;
+        unit = "    ";
+      };
     }
     {
       name = "sql";
       scope = "source.sql";
+      indent = {
+        tab-width = 4;
+        unit = "    ";
+      };
     }
   ];
 
@@ -25,6 +40,7 @@
     vue-language-server
     svelte-language-server
     php
+    intelephense
     sqlite
     tailwindcss
   ];
