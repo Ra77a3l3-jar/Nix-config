@@ -27,6 +27,5 @@
     php
     sqlite
     tailwindcss
-    npm
   ];
 }
