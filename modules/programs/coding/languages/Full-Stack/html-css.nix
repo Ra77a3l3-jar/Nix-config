@@ -4,17 +4,32 @@
       name = "html";
       scope = "text.html";
       language-servers = [ "vscode-html-language-server" ];
+      indent = {
+        tab-width = 4;
+        unit = "    ";
+      };
     }
     {
       name = "css";
       scope = "source.css";
       language-servers = [ "vscode-css-language-server" ];
+      indent = {
+        tab-width = 4;
+        unit = "    ";
+      };
     }
+    {
+      name = "json";
+      scope = "source.json";
+      language-servers = [ "vscode-json-language-server" ];
+      indent = {
+        tab-width = 4;
+        unit = "    ";
+    };
   ];
 
   home.packages = with pkgs; [
-    vscode-html-language-server
-    vscode-css-language-server
+    vscode-langservers-extracted
   ];
 }
 
