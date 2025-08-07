@@ -20,6 +20,7 @@
     {
       name = "php";
       scope = "source.php";
+      language-servers = [ "intelephense" ];
       indent = {
         tab-width = 4;
         unit = "    ";
