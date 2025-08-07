@@ -38,16 +38,13 @@
     ripgrep
     yazi
 
-    lazydocker
-
     obsidian
     libreoffice
 
     discord
     bottles
 
-    webex
-        
+    webex        
   ];
 
   home.sessionVariables = {
