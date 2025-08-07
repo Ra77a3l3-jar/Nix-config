@@ -9,6 +9,6 @@
     ./python.nix
     ./Utils/default.nix
     #./Other/default.nix
-    #./Full-Stack/default.nix
+    ./Full-Stack/default.nix
   ];
 }
