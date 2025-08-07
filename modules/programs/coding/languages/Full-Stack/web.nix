@@ -1,28 +1,32 @@
-{ pkgs, ... }:
+{ pkgs, ... }: {
+  programs.helix.languages.language = [
+    {
+      name = "vue";
+      scope = "source.vue";
+      language-servers = [ "vue-language-server" ];
+    }
+    {
+      name = "svelte";
+      scope = "source.svelte";
+      language-servers = [ "svelteserver" ];
+    }
+    {
+      name = "php";
+      scope = "source.php";
+    }
+    {
+      name = "sql";
+      scope = "source.sql";
+    }
+  ];
 
-{
   home.packages = with pkgs; [
     nodejs
-
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    nodePackages.vscode-langservers-extracted  # HTML, CSS, JSON, ESLint, etc.
-    nodePackages.eslint
-
-    # Web frameworks & build tools (frontend)
-    nodePackages.live-server
-    nodePackages.tailwindcss
-
-    # PHP & LSP
+    vue-language-server
+    svelte-language-server
     php
-    phpactor  # PHP LSP
-
-    # Extra Tools (full-stack, APIs, debugging)
-    httpie        # alternativa moderna a curl
-    jq            # JSON CLI parser
-    curl          # richieste HTTP
-    sqlite        # utile per piccoli DB
-    sqls
+    sqlite
+    tailwindcss
+    npm
   ];
 }
-
