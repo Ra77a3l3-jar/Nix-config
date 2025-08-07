@@ -5,7 +5,7 @@
     {
       name = "julia";
       scope = "source.julia";
-      language-servers = [ "julials" ];
+      language-servers = [ "julia" ];
       indent = {
         tab-width = 4;
         unit = "    ";
