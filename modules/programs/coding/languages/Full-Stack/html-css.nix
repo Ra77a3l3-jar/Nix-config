@@ -25,11 +25,11 @@
       indent = {
         tab-width = 4;
         unit = "    ";
-    };
+      };
+    }
   ];
 
   home.packages = with pkgs; [
     vscode-langservers-extracted
   ];
 }
-
