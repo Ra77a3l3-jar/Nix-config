@@ -8,5 +8,6 @@
     cmake
     cmake-language-server
     gnumake
+    lldb
   ];
 }
