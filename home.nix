@@ -1,5 +1,6 @@
 # /etc/nixos/home.nix
 { config, pkgs, pkgs-unstable, nixvim, nix-gaming, zen-browser, ... }:
+
 {
   nixpkgs.config.allowUnfree = true;
     
