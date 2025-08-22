@@ -25,7 +25,6 @@
   home.packages = with pkgs; [
 
     ghostty
-    code-cursor
 
     bat
     eza
@@ -46,11 +45,4 @@
     webex        
   ];
 
-  home.sessionVariables = {
-    EDITOR = "helix";
-    BROWSER = "firefox";
-    TERM = "ghostty";
-  };
-
-  
 }
