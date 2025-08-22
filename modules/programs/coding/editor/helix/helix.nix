@@ -6,7 +6,7 @@
     package = pkgs-unstable.helix;
 
     settings = {
-      theme = "ayu_evolve";
+      theme = "github_dark_high_contrast";
       
       editor = {
         scrolloff = 999;
