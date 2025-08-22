@@ -1,26 +1,87 @@
 {
-  description = "A Students Flake for NixOsi(Laptop)";
+  description = "A Students Flake for NixOs";
 
   inputs = {
+    # Stable nixpkgs (default)
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-
-    # Add Home Manager as an input
-    home-manager = {
-      url = "github:nix-community/home-manager/release-25.05"; # Use the stable branch corresponding to your Nixpkgs
-      inputs.nixpkgs.follows = "nixpkgs"; # Ensure it uses the same nixpkgs as your system
-    };
     
+    # Unstable nixpkgs
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    # Home Manager
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Flake utils
+    flake-utils.url = "github:numtide/flake-utils";
+
+    # NixVim
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Nix Gaming
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Zen Browser
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { 
+    self, 
+    nixpkgs, 
+    nixpkgs-unstable,
+    home-manager, 
+    flake-utils,
+    nixvim,
+    nix-gaming,
+    zen-browser,
+    ... 
+  }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {
+          # Make unstable packages available throughout the system
+          pkgs-unstable = import nixpkgs-unstable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          # Pass other inputs
+          inherit nixvim nix-gaming zen-browser;
+        };
         modules = [
           ./configuration.nix
 
+          # Home Manager as NixOS module
           home-manager.nixosModules.home-manager
-          
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              
+              # Pass specialArgs to home-manager
+              extraSpecialArgs = {
+                pkgs-unstable = import nixpkgs-unstable {
+                  system = "x86_64-linux";
+                  config.allowUnfree = true;
+                };
+                inherit nixvim nix-gaming zen-browser;
+              };
+              
+              # Import home.nix directly here
+              users.raffaele = import ./home.nix;
+            };
+          }
         ];
       };
     };
