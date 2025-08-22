@@ -1,9 +1,8 @@
-{ ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   programs.helix.languages = {
 
-    package = pkgs-unstable.helix;
     
     language = [
       {
