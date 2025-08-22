@@ -14,10 +14,6 @@
       ./modules/programs/coding/shell/default.nix
     ];
 
-    home-manager.users.raffaele = {
-      imports = [ ./home.nix ]; 
-    };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
