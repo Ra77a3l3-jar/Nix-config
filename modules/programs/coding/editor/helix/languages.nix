@@ -2,6 +2,9 @@
 
 {
   programs.helix.languages = {
+
+    package = pkgs-unstable.helix;
+    
     language = [
       {
         name = "c";
