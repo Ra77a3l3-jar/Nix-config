@@ -16,6 +16,8 @@
   home.homeDirectory = "/home/raffaele";
   home.stateVersion = "25.05";
 
+  _module.args = { inherit pkgs-unstable; };
+
   home.packages = with pkgs; [
   
     ghostty
