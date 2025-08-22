@@ -7,6 +7,6 @@
     #./cpp.nix
     #./zig.nix
     #./rust.nix
-  ]
+  ];
   
 }
