@@ -1,31 +1,25 @@
 # /etc/nixos/home.nix
-{ config, pkgs, ... }:
-
+{ config, pkgs, pkgs-unstable, nixvim, nix-gaming, zen-browser, ... }:
 {
-
   nixpkgs.config.allowUnfree = true;
     
   imports = [
     ./modules/programs/coding/terminals/default.nix
-
     ./modules/programs/flatpak.nix
     
     ./modules/programs/coding/editor/helix/default.nix
     ./modules/programs/coding/editor/jetBrains.nix
-
     ./modules/programs/coding/languages/default.nix
-
   ];
   
-  home.username = "raffaele"; # Replace 'root' with your actual username
-  home.homeDirectory = "/home/raffaele"; # Replace '/root' with your actual home directory (e.g., "/home/yourusername")
-
-  home.stateVersion = "25.05"; # Match this with your Home Manager release (or a compatible one)
+  home.username = "raffaele";
+  home.homeDirectory = "/home/raffaele";
+  home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
-
+  
     ghostty
-
+    
     bat
     eza
     atuin
@@ -35,14 +29,22 @@
     fd
     ripgrep
     yazi
-
+    
     obsidian
     libreoffice
-
     discord
     bottles
+    
+    webex
+  ] ++ (with pkgs-unstable; [
 
-    webex        
+    zed-editor
+  
+  ]) ++ [
+  
+    zen-browser.packages.${pkgs.system}.default
+    
   ];
 
+  programs.home-manager.enable = true;
 }
