@@ -6,8 +6,8 @@
     package = pkgs-unstable.helix;
 
     settings = {
-      #theme = "github_dark_high_contrast";
-      theme = "ashen";
+      theme = "github_dark_high_contrast";
+      #theme = "ashen";
       
       editor = {
         scrolloff = 999;
