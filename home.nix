@@ -9,7 +9,6 @@
     ./modules/programs/flatpak.nix
     
     ./modules/programs/coding/editor/helix/default.nix
-    ./modules/programs/coding/languages/default.nix
 
     ./modules/programs/coding/language/default.nix
   ];
