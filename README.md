@@ -1,241 +1,123 @@
 <div align="center">
 
-# 🔥 NixOS Configuration
+  <img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-logo-only-hires.png" alt="NixOS Logo" width="150">
 
-### *A bulletproof, modular NixOS setup that just works*
+  # NixOS Configuration
 
-[![NixOS](https://img.shields.io/badge/NixOS-25.05-blue.svg?style=for-the-badge&logo=nixos)](https://nixos.org)
-[![Home Manager](https://img.shields.io/badge/Home%20Manager-25.05-green.svg?style=for-the-badge)](https://github.com/nix-community/home-manager)
-[![Secure Boot](https://img.shields.io/badge/Secure%20Boot-Lanzaboote-red.svg?style=for-the-badge&logo=linux)](https://github.com/nix-community/lanzaboote)
-[![Flakes](https://img.shields.io/badge/Flakes-Enabled-purple.svg?style=for-the-badge)](https://nixos.wiki/wiki/Flakes)
+  ### *A meticulously crafted, modular, and feature-rich NixOS setup.*
 
-</div>
-
----
-
-## 🎯 **What Makes This Special**
-
-<table>
-<tr>
-<td width="50%">
-
-### 🚀 **Lightning Fast**
-- Declarative configuration
-- Atomic upgrades & rollbacks
-- Instant environment reproduction
-
-### 🔒 **Fort Knox Security**
-- Full UEFI Secure Boot chain
-- Immutable system configuration
-- Reproducible builds
-
-</td>
-<td width="50%">
-
-### 🧩 **Modular Architecture**
-- Clean separation of concerns
-- Easy to extend & maintain
-- Plug-and-play modules
-
-### 💻 **Developer Heaven**
-- Multi-language support
-- Modern CLI tools
-- Optimized workflow
-
-</td>
-</tr>
-</table>
-
----
-
-## 📦 **Core Features**
-
-<div align="center">
-
-| Component | Description | Status |
-|-----------|-------------|---------|
-| 🖥️ **Desktop** | GNOME with custom tweaks | ✅ Ready |
-| 🛡️ **Security** | Lanzaboote Secure Boot | ✅ Ready |
-| 🔧 **Development** | Rust, C/C++, Java, Zig | ✅ Ready |
-| 🐚 **Shell** | Zsh + Oh My Zsh + Modern tools | ✅ Ready |
-| 📱 **Terminal** | Ghostty with blur effects | ✅ Ready |
-| 🎮 **Gaming** | Steam + Gaming optimizations | ✅ Ready |
+  [![NixOS](https://img.shields.io/badge/NixOS-25.05-blue.svg?style=for-the-badge&logo=nixos)](https://nixos.org)
+  [![Home Manager](https://img.shields.io/badge/Home%20Manager-25.05-green.svg?style=for-the-badge)](https://github.com/nix-community/home-manager)
+  [![Flakes](https://img.shields.io/badge/Flakes-Enabled-purple.svg?style=for-the-badge)](https://nixos.wiki/wiki/Flakes)
+  [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 </div>
 
 ---
 
-## 🏗️ **Architecture**
+## 🌟 Introduction
 
-<div align="center">
+Welcome to my personal NixOS configuration! This repository contains a complete, modular, and reproducible setup for a development and gaming machine. It's designed to be easily maintainable and extensible, with a strong focus on providing a seamless and efficient user experience.
 
-```
-🌟 nixos-config/
-├── 📄 configuration.nix          # System entry point
-├── 🔒 flake.nix                 # Flake definition
-├── 🏠 home.nix                  # User configuration
-├── ⚙️ hardware-configuration.nix # Hardware specs
-└── 📁 modules/
-    ├── 🎯 core/                 # System foundations
-    │   ├── 🌍 base.nix         # Localization & basics
-    │   ├── 🔌 drivers.nix      # Hardware drivers
-    │   ├── 🌐 networking.nix   # Network setup
-    │   ├── 🛡️ security.nix     # Security policies
-    │   ├── 🔧 services.nix     # System services
-    │   ├── 📦 system-packages.nix # Core packages
-    │   └── 👤 user.nix         # User management
-    ├── 🖥️ desktop/
-    │   └── 🎨 gnome.nix        # Desktop environment
-    └── 🚀 programs/
-        ├── 💻 coding/          # Development stack
-        │   ├── 🖥️ ghostty.nix  # Terminal config
-        │   ├── 📝 git.nix      # Version control
-        │   ├── 🔤 languages.nix # Programming languages
-        │   ├── ⚡ nvim.nix     # Editor setup
-        │   └── 🐚 zsh.nix      # Shell configuration
-        └── 🎮 gaming.nix       # Gaming setup
-```
-
-</div>
+This configuration is built upon the power of Nix Flakes, ensuring that the entire system can be replicated with a single command. Whether you're a developer, a gamer, or just a NixOS enthusiast, you'll find something to love in this setup.
 
 ---
 
-## ⚡ **Quick Start**
+## 🚀 Features
 
-<div align="center">
+This configuration is packed with features, all organized into logical modules. Here's a glimpse of what's inside:
 
-### 🔥 **One-Command Installation**
+### 的核心 (Core)
 
-</div>
+| Feature | Description |
+|---|---|
+| 🐧 **Kernel** | The latest stable Linux kernel for optimal performance and hardware support. |
+| 🕰️ **Timezone** | Pre-configured for Europe/Rome. |
+| 🌍 **Localization** | Italian localization with UTF-8 encoding. |
+| 📦 **Nix** | Flakes and the new Nix command are enabled by default. |
+| 🔓 **Unfree Packages** | Access to a wider range of software. |
 
-```bash
-# 1. Clone the magic
-git clone https://github.com/Ra77a3l3-jar/Nix-config /etc/nixos && cd /etc/nixos
+### 🖥️ Desktop
 
-# 2. Generate your hardware config
-sudo nixos-generate-config --root /mnt
+| Feature | Description |
+|---|---|
+| 🎨 **GNOME** | A clean and modern GNOME desktop environment. |
+| 🚀 **Performance** | Excludes unnecessary GNOME apps for a leaner experience. |
+| 🔊 **Audio** | PipeWire for professional-grade audio. |
+| 🎨 **Theming** | Yaru theme for a polished look and feel. |
+| 🔧 **Tweaks** | Includes GNOME Tweaks and Extension Manager for easy customization. |
 
-# 3. Customize for your setup
-vim configuration.nix home.nix
+### ծրագրեր (Programs)
 
-# 4. Deploy and enjoy!
-sudo nixos-rebuild switch --flake .#nixos
-```
+| Category | Tools |
+|---|---|
+| 셸 **Shells** | Zsh, Fish, Bash |
+| 💻 **Terminals** | Ghostty, Kitty, Tmux |
+| 📝 **Editors** | Helix, Zed, Neovim (via NixVim) |
+| 🌐 **Browsers** | Firefox, Google Chrome (via Flatpak) |
+| 🎮 **Gaming** | Steam, Lutris, Bottles, Gamemode, MangoHud, PrismLauncher |
+| 📦 **Flatpak** | A selection of useful Flatpak applications. |
+| 🛠️ **Utilities** | A vast collection of CLI and GUI tools to enhance your workflow. |
 
----
+### 💻 Development
 
-## 🛡️ **Secure Boot Setup**
-
-<div align="center">
-
-### 🔐 **Military-Grade Security**
-
-</div>
-
-```bash
-# Create and enroll keys
-sudo sbctl create-keys
-sudo sbctl enroll-keys --microsoft
-
-# Sign bootloader
-sudo sbctl sign -s /boot/EFI/systemd/systemd-bootx64.efi
-sudo sbctl sign -s /boot/EFI/BOOT/BOOTX64.EFI
-
-# Verify everything is locked down
-sudo sbctl status
-```
-
----
-
-## 🎨 **Customization**
-
-<div align="center">
-
-### 🔧 **Make It Yours**
-
-</div>
-
-<table>
-<tr>
-<td width="50%">
-
-**📦 Add Packages**
-```nix
-home.packages = with pkgs; [
-  # Your awesome tools here
-  discord
-  spotify
-  vscode
-];
-```
-
-</td>
-<td width="50%">
-
-**🔄 Update System**
-```bash
-# Update inputs
-nix flake update
-
-# Apply changes
-sudo nixos-rebuild switch --flake .#nixos
-```
-
-</td>
-</tr>
-</table>
+| Language/Tool | Included |
+|---|---|
+| 🦀 **Systems** | C, C++, Rust, Zig |
+| 🌐 **Full-Stack** | JavaScript, TypeScript, HTML, CSS, Database Tools |
+| 📜 **Scripting** | Python, Lua, Julia |
+|  अन्य **Other** | Go, Java, Kotlin |
+| 🔧 **Utilities** | Git, Docker, Lazygit, Zoxide, and many more! |
 
 ---
 
-## 💎 **Included Goodies**
+## 💾 Installation
 
-<div align="center">
+> **Warning:** This configuration is highly personalized. Please review the code and adapt it to your needs before using it.
 
-### 🛠️ **Development Arsenal**
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/Nix-config /etc/nixos
+    cd /etc/nixos
+    ```
 
-| Language | Tools | Status |
-|----------|-------|---------|
-| 🦀 **Rust** | rustup, cargo tools | ✅ |
-| ⚡ **Zig** | zig, zls | ✅ |
-| ☕ **Java** | JDK, Gradle, LSP | ✅ |
-| 🔧 **C/C++** | Clang, tools, analyzer | ✅ |
+2.  **Generate hardware configuration:**
+    ```bash
+    sudo nixos-generate-config --root /mnt
+    ```
+    > **Note:** This will create a `hardware-configuration.nix` file. You may need to merge it with the existing one.
 
-### 🎯 **Modern CLI Tools**
+3.  **Customize the configuration:**
+    *   Edit `flake.nix` to match your system's architecture if it's not `x86_64-linux`.
+    *   Modify `configuration.nix` and `home.nix` to suit your preferences. Pay close attention to the user and home directory settings.
 
-| Tool | Purpose | Why It's Awesome |
-|------|---------|------------------|
-| 🦇 **bat** | cat replacement | Syntax highlighting |
-| 🔍 **fzf** | Fuzzy finder | Lightning fast search |
-| 🌊 **zellij** | Terminal multiplexer | Modern tmux alternative |
-| 🗂️ **eza** | ls replacement | Beautiful file listings |
-| 💨 **dust** | du replacement | Disk usage visualization |
-
-</div>
+4.  **Build and switch to the new configuration:**
+    ```bash
+    sudo nixos-rebuild switch --flake .#nixos
+    ```
 
 ---
 
-## 📚 **Resources**
+## 🖼️ Screenshots
 
-<div align="center">
+*(Coming soon!)*
 
-[![NixOS Manual](https://img.shields.io/badge/📖_NixOS_Manual-Learn_More-blue?style=for-the-badge)](https://nixos.org/manual/nixos/stable/)
-[![Home Manager](https://img.shields.io/badge/🏠_Home_Manager-Documentation-green?style=for-the-badge)](https://nix-community.github.io/home-manager/)
-[![Flakes Wiki](https://img.shields.io/badge/❄️_Flakes_Wiki-Advanced_Usage-purple?style=for-the-badge)](https://nixos.wiki/wiki/Flakes)
+---
 
-</div>
+## 🤝 Contributing
+
+This is a personal configuration, but I'm always open to suggestions and improvements. If you have any ideas, feel free to open an issue or submit a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-### 🎉 **Ready to Experience NixOS Nirvana?**
-
-*This configuration is battle-tested, production-ready, and designed to make your life easier.*
-
-**⚠️ Always backup your data before switching configurations!**
-
----
-
-*Made with ❤️ and lots of ☕ by a NixOS enthusiast*
+  *Made with ❤️ and a whole lot of Nix!*
 
 </div>
