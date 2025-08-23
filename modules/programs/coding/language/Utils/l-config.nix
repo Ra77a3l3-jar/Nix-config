@@ -42,7 +42,7 @@
       {
         name = "toml";
         scope = "source.toml";
-        language-servers = [ taplo"" ];
+        language-servers = [ "taplo" ];
         indent = {
         tab-width = 4;
         unit = "    ";
