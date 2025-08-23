@@ -4,7 +4,7 @@
 
   imports = [
     ./c.nix
-    #./cpp.nix
+    ./cpp.nix
     #./zig.nix
     #./rust.nix
   ];
