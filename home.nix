@@ -43,6 +43,8 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
+    euphonica
+    lunarvim
   
   ]);
 
