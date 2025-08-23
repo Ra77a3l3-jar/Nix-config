@@ -17,7 +17,7 @@
       export MANPAGER="batman"
       export EDITOR="hx"
       export VISUAL="hx"
-      #export GOOGLE_CLOUD_PROJECT = "peak-hangout-469915-d6"
+      #export GOOGLE_CLOUD_PROJECT="peak-hangout-469915-d6"
       
       eval "$(zoxide init zsh)"
 
