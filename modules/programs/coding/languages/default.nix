@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./Full-Stack/default.nix
+    #./Full-Stack/default.nix
   ];
   
 }
