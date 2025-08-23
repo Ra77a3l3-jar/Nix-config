@@ -44,6 +44,8 @@
 
     zed-editor
     gemini-cli
+    qwen-code
+    ollama
   
   ]);
 
