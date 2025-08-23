@@ -44,7 +44,6 @@
 
     zed-editor
     euphonica
-    lunarvim
   
   ]);
 
