@@ -29,6 +29,7 @@
       alias zl='zellij'
       alias cl='clear'
       alias hs='history'
+      alias cd='z'
 
       alias la='eza -la --icons'
       alias ltree='eza --tree --level=3 --long --git --icons'
