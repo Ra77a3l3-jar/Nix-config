@@ -32,6 +32,7 @@
     fd
     ripgrep
     yazi
+    glow
     
     obsidian
     libreoffice
