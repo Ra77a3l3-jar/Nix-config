@@ -66,6 +66,7 @@
      man-pages
      man-pages-posix
      eza
+     glow
   ];
 
   services.flatpak.enable = true;
