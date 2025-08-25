@@ -4,7 +4,7 @@
   programs.kitty = {
     enable = true;
     
-    #theme = "VibrantInk";
+    themeFile = "VibrantInk";
     
     font = {
       name = "Ubuntu Nerd Font";
