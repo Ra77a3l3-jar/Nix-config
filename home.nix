@@ -43,9 +43,10 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
+    
     gemini-cli
     qwen-code
-    ollama
+    claude-code
   
   ]);
 
