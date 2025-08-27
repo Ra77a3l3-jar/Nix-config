@@ -8,12 +8,24 @@
       numpy
       scipy
       matplotlib
+      streamlit
+      python-dotenv
+      loguru
+      restrictedpython
       
       # AI/ML libraries
       tensorflow
       torch
       scikit-learn
       opencv4
+
+      # AI
+      openai
+      langchain-mistralai
+      google-generativeai
+      anthropic
+      langchain-deepseek
+      
             
       requests
       pip
