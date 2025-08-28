@@ -46,7 +46,6 @@
     
     gemini-cli
     qwen-code
-    claude-code
   
   ]);
 
