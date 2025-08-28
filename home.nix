@@ -44,8 +44,6 @@
 
     zed-editor
     
-    gemini-cli
-    qwen-code
     opencode
   
   ]);
