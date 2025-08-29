@@ -17,6 +17,10 @@
       export MANPAGER="batman"
       export EDITOR="hx"
       export VISUAL="hx"
+
+      export PKG_CONFIG_PATH=$(nix eval --raw nixpkgs.openssl.dev)/lib/pkgconfig
+      export OPENSSL_DIR=$(nix eval --raw nixpkgs.openssl.dev)
+
       export GOOGLE_CLOUD_PROJECT="peak-hangout-469915-d6"
       
       eval "$(zoxide init zsh)"
