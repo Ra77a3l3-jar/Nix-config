@@ -10,6 +10,7 @@
      openssl.dev
      libgit2
      libgit2.dev
+     pkg-config
   ];
 
   programs.helix.languages = {
