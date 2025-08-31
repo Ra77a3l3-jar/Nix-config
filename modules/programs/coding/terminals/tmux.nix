@@ -91,32 +91,13 @@
       # tmux-fzf configuration
       TMUX_FZF_LAUNCH_KEY="C-f"
       
-      # Simple built-in theme - no glitches with Ghostty
-      # Status bar styling
-      set -g status-style 'bg=#2e3440 fg=#d8dee9'
-      set -g status-left-length 40
-      set -g status-right-length 50
-      set -g status-left '#[bg=#5e81ac,fg=#2e3440,bold] #S #[bg=#2e3440,fg=#5e81ac]'
-      set -g status-right '#[fg=#81a1c1]%H:%M #[bg=#81a1c1,fg=#2e3440,bold] %Y-%m-%d '
-      
-      # Window status
-      set -g window-status-format ' #I:#W '
-      set -g window-status-current-format '#[bg=#88c0d0,fg=#2e3440,bold] #I:#W '
-      set -g window-status-separator ''
-      
-      # Pane borders
-      set -g pane-border-style 'fg=#4c566a'
-      set -g pane-active-border-style 'fg=#5e81ac'
-      
-      # Message styling
-      set -g message-style 'bg=#bf616a,fg=#eceff4,bold'
-      
       # Plugin list
       set -g @plugin 'tmux-plugins/tpm'
       set -g @plugin 'alexwforsythe/tmux-which-key'
       set -g @plugin 'omerxx/tmux-sessionx'
       set -g @plugin 'omerxx/tmux-floax'
       set -g @plugin 'sainnhe/tmux-fzf'
+      set -g @plugin 'jimeh/tmux-themepack'
       
       # Initialize TMUX plugin manager (keep this line at the very bottom)
       run '~/.tmux/plugins/tpm/tpm'
