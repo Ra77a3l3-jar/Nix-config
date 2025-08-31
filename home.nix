@@ -44,6 +44,7 @@
 
     zed-editor
     opencode
+    gemini-cli
   
   ]);
 
