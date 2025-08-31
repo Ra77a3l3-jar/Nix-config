@@ -22,8 +22,6 @@
       
       eval "$(zoxide init zsh)"
 
-      alias steam-nvidia='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia steam'
-
       alias hm-reload='source ~/.nix-profile/etc/profile.d/hm-session-vars.sh'
       alias nos-rebuild='nixos-rebuild switch --flake ./#nixos --verbose'
     
