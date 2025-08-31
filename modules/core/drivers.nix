@@ -39,10 +39,10 @@
     # PRIME configuration for hybrid graphics
     prime = {
       # Enable NVIDIA Optimus support
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;  # Enables prime-run command
-      };
+      #offload = {
+        #enable = true;
+        #enableOffloadCmd = true;  # Enables prime-run command
+      #};
       
       # Make sure to get the right bus IDs for your system
       # Run: lspci | grep -E "(VGA|3D)" to find these values
@@ -50,7 +50,7 @@
       nvidiaBusId = "PCI:1:0:0";    # Usually the discrete NVIDIA GPU
       
       # Uncomment if you want to use sync mode instead of offload
-      # sync.enable = true;
+      sync.enable = true;
       
       # Uncomment if you want NVIDIA as primary (not recommended for battery life)
       # reverseSync.enable = true;
