@@ -1,24 +1,14 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Enable OpenGL/Mesa (updated for newer NixOS)
+  # Enable graphics (simplified for NVIDIA-only)
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    
-    # AMD GPU support
-    extraPackages = with pkgs; [
-      amdvlk              # AMD Vulkan driver
-      rocmPackages.clr    # OpenCL support (replaces rocm-opencl-icd/runtime)
-    ];
-    
-    extraPackages32 = with pkgs; [
-      driversi686Linux.amdvlk  # 32-bit AMD Vulkan
-    ];
   };
 
-  # NVIDIA configuration
-  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+  # NVIDIA only configuration
+  services.xserver.videoDrivers = [ "nvidia" ];
   
   hardware.nvidia = {
     # Use the open source version of the kernel module (for RTX 30 series)
@@ -30,44 +20,20 @@
     # Use the stable nvidia driver
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     
-    # Power management (important for laptops)
+    # Power management (simplified for single GPU)
     powerManagement = {
       enable = true;
-      finegrained = true;  # Enable fine-grained power management
+      finegrained = false;  # Not needed without hybrid graphics
     };
     
-    # PRIME configuration for hybrid graphics
-    prime = {
-      # Enable NVIDIA Optimus support
-      #offload = {
-        #enable = true;
-        #enableOffloadCmd = true;  # Enables prime-run command
-      #};
-      
-      # Make sure to get the right bus IDs for your system
-      # Run: lspci | grep -E "(VGA|3D)" to find these values
-      amdgpuBusId = "PCI:6:0:0";    # Usually the integrated AMD GPU
-      nvidiaBusId = "PCI:1:0:0";    # Usually the discrete NVIDIA GPU
-      
-      # Uncomment if you want to use sync mode instead of offload
-      sync.enable = true;
-      
-      # Uncomment if you want NVIDIA as primary (not recommended for battery life)
-      # reverseSync.enable = true;
-    };
+    # No PRIME configuration needed since iGPU is disabled
   };
 
-  # AMD GPU specific configuration
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  
-  # Kernel parameters for better AMD GPU support
+  # Kernel parameters for NVIDIA optimization
   boot.kernelParams = [
-    # AMD GPU optimizations
-    "amd_pstate=active"           # Use AMD P-State driver
-    "amdgpu.ppfeaturemask=0xffffffff"  # Enable all power play features
-    
-    # General performance
-    "mitigations=off"             # Disable CPU mitigations for better performance (less secure)
+    # NVIDIA optimizations
+    "nvidia.NVreg_UsePageAttributeTable=1"
+    "nvidia.NVreg_InitializeSystemMemoryAllocations=0"
   ];
 
   # Additional packages for GPU support
@@ -75,11 +41,7 @@
     # NVIDIA tools
     nvidia-vaapi-driver
     config.boot.kernelPackages.nvidia_x11.settings  # nvidia-settings
-    nvtopPackages.full
-    
-    # AMD tools  
-    radeontop
-    amdgpu_top
+    nvtopPackages.nvidia
     
     # Vulkan tools
     vulkan-tools
@@ -92,38 +54,28 @@
     mesa-demos
   ];
 
-  # Environment variables for proper GPU detection
+  # Environment variables for NVIDIA-only setup
   environment.sessionVariables = {
-    # Vulkan
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json:/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json";
-    
     # NVIDIA
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     LIBVA_DRIVER_NAME = "nvidia";
     
+    # Vulkan (NVIDIA only)
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json";
+    
     # General
     WLR_NO_HARDWARE_CURSORS = "1";  # Fix for some Wayland compositors
-    
-    # Force specific applications to use NVIDIA GPU
-    __NV_PRIME_RENDER_OFFLOAD = "1";
-    __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
   };
 
-  # Services for better power management
+  # Services for power management
   services = {
-    # TLP for power management (conflicts with power-profiles-daemon)
+    # TLP for power management
     tlp = {
       enable = true;
       settings = {
         # CPU settings
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-        
-        # AMD GPU power management
-        RADEON_DPM_STATE_ON_AC = "performance";
-        RADEON_DPM_STATE_ON_BAT = "battery";
-        RADEON_POWER_PROFILE_ON_AC = "high";
-        RADEON_POWER_PROFILE_ON_BAT = "low";
         
         # PCI Express power management
         PCIE_ASPM_ON_AC = "default";
@@ -157,7 +109,6 @@
       gpu = {
         apply_gpu_optimisations = "accept-responsibility";
         gpu_device = 0;
-        amd_performance_level = "high";
         nvidia_performance_mode = "MaxPerformanceMode";
       };
       
