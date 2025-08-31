@@ -3,9 +3,7 @@
 {
   # Gaming packages
   home.packages = with pkgs; [
-    # Steam and gaming platforms
-    pkgs-unstable.steam
-    pkgs-unstable.steam-run
+    # Gaming platforms (Steam from unstable)
     lutris
     bottles
     heroic
@@ -18,11 +16,9 @@
     gamescope
     protontricks
     winetricks
-            
+    
     # Wine and compatibility
-    wine
-    wine64
-    wineWowPackages.waylandFull
+    wineWowPackages.waylandFull  # This includes both 32-bit and 64-bit wine
     dxvk
     
     # Emulators (optional)
@@ -30,12 +26,14 @@
     #dolphin-emu
     #retroarch
     
-    # Additional gaming tools from unstable
+    # Additional gaming tools and Steam from unstable
+    pkgs-unstable.steam
+    pkgs-unstable.steam-run
     pkgs-unstable.prismlauncher  # Minecraft launcher
   ] ++ (if nix-gaming ? packages.${pkgs.system} then [
-    # Nix-gaming packages if available
+    # Nix-gaming packages if available (using deprecated proton-ge for now)
     nix-gaming.packages.${pkgs.system}.wine-ge
-    nix-gaming.packages.${pkgs.system}.proton-ge
+    # nix-gaming.packages.${pkgs.system}.proton-ge  # Deprecated, use proton-ge-bin instead
   ] else []);
 
   # XDG settings for gaming
@@ -119,4 +117,3 @@
     };
   };
 }
-
