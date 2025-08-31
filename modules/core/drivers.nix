@@ -1,11 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Enable OpenGL/Mesa
-  hardware.opengl = {
+  # Enable OpenGL/Mesa (updated for newer NixOS)
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     
     # AMD GPU support
     extraPackages = with pkgs; [
@@ -108,6 +107,10 @@
     
     # General
     WLR_NO_HARDWARE_CURSORS = "1";  # Fix for some Wayland compositors
+    
+    # Force specific applications to use NVIDIA GPU
+    __NV_PRIME_RENDER_OFFLOAD = "1";
+    __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
   };
 
   # Services for better power management
