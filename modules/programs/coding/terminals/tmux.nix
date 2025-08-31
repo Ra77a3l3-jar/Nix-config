@@ -19,5 +19,5 @@
     historyLimit= 50000;
     terminal = "screen-256color";
     
-  }
+  };
 }
