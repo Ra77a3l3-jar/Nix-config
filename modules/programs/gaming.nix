@@ -22,51 +22,39 @@
     dxvk
     
     # Emulators (optional)
-    #pcsx2
-    #dolphin-emu
-    #retroarch
+    # pcsx2
+    # dolphin-emu
+    # retroarch
     
     # Additional gaming tools and Steam from unstable
     pkgs-unstable.steam
     pkgs-unstable.steam-run
     pkgs-unstable.prismlauncher  # Minecraft launcher
-  ] ++ (if nix-gaming ? packages.${pkgs.system} then [
-    # Nix-gaming packages if available
-    # nix-gaming.packages.${pkgs.system}.wine-ge  # Conflicts with wineWowPackages
-    # nix-gaming.packages.${pkgs.system}.proton-ge  # Deprecated, use proton-ge-bin instead
-  ] else []);
+  ];
 
-  # XDG settings for gaming
+  # Simplified desktop entries (no GPU switching needed)
   xdg.desktopEntries = {
-    steam-nvidia = {
-      name = "Steam (NVIDIA)";
-      exec = "env DRI_PRIME=1 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia steam";
+    steam-gaming = {
+      name = "Steam Gaming";
+      exec = "steam";
       icon = "steam";
-      comment = "Launch Steam with NVIDIA GPU";
+      comment = "Launch Steam (automatically uses NVIDIA)";
       categories = [ "Game" ];
     };
     
-    lutris-nvidia = {
-      name = "Lutris (NVIDIA)";
-      exec = "env DRI_PRIME=1 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia lutris";
+    lutris-gaming = {
+      name = "Lutris Gaming";
+      exec = "lutris";
       icon = "lutris";
-      comment = "Launch Lutris with NVIDIA GPU";
+      comment = "Launch Lutris (automatically uses NVIDIA)";
       categories = [ "Game" ];
     };
   };
 
-  # Environment variables for gaming
+  # Environment variables for gaming (simplified)
   home.sessionVariables = {
-    # Vulkan
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json:/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
-    
     # Steam optimizations
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-    
-    # Force NVIDIA for gaming
-    DRI_PRIME = "1";
-    __NV_PRIME_RENDER_OFFLOAD = "1";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     
     # MangoHud
     MANGOHUD = "1";
@@ -74,6 +62,9 @@
     
     # GameMode
     GAMEMODE = "1";
+    
+    # NVIDIA optimizations
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
   };
 
   # Gaming-specific dconf settings (for GNOME users)
@@ -117,7 +108,7 @@
         io_color = "A491D3";
         background_color = "020202";
         background_alpha = "0.4";
-        font_size = 24;
+        font_size = 16;
       };
     };
   };
