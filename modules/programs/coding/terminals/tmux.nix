@@ -39,11 +39,22 @@
       # Don't rename windows automatically
       set-option -g allow-rename off
       
-      # Enable true color support - fixed to prevent glitches
-      set -g default-terminal "screen-256color"
-      set -ag terminal-overrides ",xterm-256color:RGB"
+      # Enable true color support - enhanced glitch prevention
+      set -g default-terminal "tmux-256color"
+      set -ag terminal-overrides ",xterm-256color:RGB,*256col*:RGB"
+      set -ag terminal-overrides ",*:U8=0"  # Disable UTF-8 mouse support to prevent glitches
+      set -ag terminal-overrides ",*:Smulx=\E[4::%p1%dm"  # undercurl support
+      set -ag terminal-overrides ",*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m"  # underscore colours
+      set -g escape-time 0  # Reduce escape time to prevent input lag
+      set -g repeat-time 500  # Reduce repeat time
       
-      # Status bar at the bottom
+      # Additional settings to prevent rendering glitches
+      set -g allow-passthrough on
+      set -ga terminal-features "*:hyperlinks"
+      set -g set-titles on
+      set -g set-titles-string "#T"
+      
+      # Status bar at the bottom (changed from top due to minimal theme)
       set -g status-position bottom
       
       # Key bindings
@@ -91,13 +102,19 @@
       # tmux-fzf configuration
       TMUX_FZF_LAUNCH_KEY="C-f"
       
+      # minimal-tmux-status configuration - keep it simple to avoid glitches
+      set -g @minimal-tmux-bg "#698DDA"
+      set -g @minimal-tmux-justify "centre"
+      set -g @minimal-tmux-indicator-str "  tmux  "
+      set -g @minimal-tmux-status "top"
+      
       # Plugin list
       set -g @plugin 'tmux-plugins/tpm'
       set -g @plugin 'alexwforsythe/tmux-which-key'
       set -g @plugin 'omerxx/tmux-sessionx'
       set -g @plugin 'omerxx/tmux-floax'
       set -g @plugin 'sainnhe/tmux-fzf'
-      set -g @plugin 'jimeh/tmux-themepack'
+      set -g @plugin 'niksingh710/minimal-tmux-status'
       
       # Initialize TMUX plugin manager (keep this line at the very bottom)
       run '~/.tmux/plugins/tpm/tpm'
@@ -115,7 +132,9 @@
     recursive = true;
   };
   
+  # Additional tmux-related packages
   home.packages = with pkgs; [
+    tmux
     tmuxinator  # Session manager
   ];
 }
