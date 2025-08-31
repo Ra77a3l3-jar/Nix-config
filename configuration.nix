@@ -66,7 +66,6 @@
      man-pages-posix
      eza
      glow
-     lspci
   ];
 
   services.flatpak.enable = true;
