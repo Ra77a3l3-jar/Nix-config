@@ -74,8 +74,8 @@
   environment.systemPackages = with pkgs; [
     # NVIDIA tools
     nvidia-vaapi-driver
-    nvidia-settings
-    nvtop
+    config.boot.kernelPackages.nvidia_x11.settings  # nvidia-settings
+    nvtopPackages.nvidia
     
     # AMD tools  
     radeontop
@@ -90,9 +90,6 @@
     # GPU monitoring
     glxinfo
     mesa-demos
-    
-    # PRIME command (for manual GPU switching)
-    prime-run
   ];
 
   # Environment variables for proper GPU detection
