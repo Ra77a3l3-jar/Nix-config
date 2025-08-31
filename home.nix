@@ -6,7 +6,7 @@
   imports = [
     ./modules/programs/coding/terminals/default.nix
     ./modules/programs/flatpak.nix
-    #./modules/programs/gaming.nix
+    ./modules/programs/gaming.nix
     
     ./modules/programs/coding/editor/helix/default.nix
 
