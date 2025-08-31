@@ -40,7 +40,7 @@
   xdg.desktopEntries = {
     steam-nvidia = {
       name = "Steam (NVIDIA)";
-      exec = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia steam";
+      exec = "env DRI_PRIME=1 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia steam";
       icon = "steam";
       comment = "Launch Steam with NVIDIA GPU";
       categories = [ "Game" ];
@@ -48,7 +48,7 @@
     
     lutris-nvidia = {
       name = "Lutris (NVIDIA)";
-      exec = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia lutris";
+      exec = "env DRI_PRIME=1 __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia lutris";
       icon = "lutris";
       comment = "Launch Lutris with NVIDIA GPU";
       categories = [ "Game" ];
@@ -58,10 +58,15 @@
   # Environment variables for gaming
   home.sessionVariables = {
     # Vulkan
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json:/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json";
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/nvidia_icd.json:/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
     
     # Steam optimizations
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+    
+    # Force NVIDIA for gaming
+    DRI_PRIME = "1";
+    __NV_PRIME_RENDER_OFFLOAD = "1";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     
     # MangoHud
     MANGOHUD = "1";
