@@ -39,12 +39,12 @@
       # Don't rename windows automatically
       set-option -g allow-rename off
       
-      # Enable true color support
-      set -g default-terminal "tmux-256color"
-      set -ga terminal-overrides ",*256col*:RGB"
+      # Enable true color support - fixed to prevent glitches
+      set -g default-terminal "screen-256color"
+      set -ag terminal-overrides ",xterm-256color:RGB"
       
-      # Status bar at the top
-      set -g status-position top
+      # Status bar at the bottom
+      set -g status-position bottom
       
       # Key bindings
       bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
@@ -75,40 +75,34 @@
       set -g @tmux-which-key-xdg-enable 1
       set -g @tmux-which-key-disable-autoreload 0
       
-      # tmux-resurrect configuration
-      set -g @resurrect-capture-pane-contents 'on'
-      set -g @resurrect-strategy-vim 'session'
-      set -g @resurrect-strategy-nvim 'session'
+      # sessionx configuration
+      set -g @sessionx-bind 'o'
+      set -g @sessionx-window-height '85%'
+      set -g @sessionx-window-width '75%'
+      set -g @sessionx-zoxide-mode 'on'
       
-      # tmux-continuum configuration
-      set -g @continuum-restore 'on'
-      set -g @continuum-boot 'on'
-      set -g @continuum-save-interval '15'
+      # floax configuration
+      set -g @floax-bind 'p'
+      set -g @floax-width '80%'
+      set -g @floax-height '80%'
+      set -g @floax-border-color 'magenta'
+      set -g @floax-text-color 'blue'
       
-      # Catppuccin theme configuration (omerxx version)
-      set -g @catppuccin_window_left_separator "█"
-      set -g @catppuccin_window_right_separator "█ "
-      set -g @catppuccin_window_number_position "right"
-      set -g @catppuccin_window_middle_separator "  █"
+      # tmux-fzf configuration
+      TMUX_FZF_LAUNCH_KEY="C-f"
       
-      set -g @catppuccin_window_default_fill "number"
-      
-      set -g @catppuccin_window_current_fill "number"
-      set -g @catppuccin_window_current_text "#{pane_current_path}"
-      
-      set -g @catppuccin_status_modules_right "application session user host date_time"
-      set -g @catppuccin_status_left_separator  ""
-      set -g @catppuccin_status_right_separator ""
-      set -g @catppuccin_status_fill "all"
-      set -g @catppuccin_status_connect_separator "yes"
+      # tmux-dotbar theme configuration
+      set -g @dotbar-session-symbol ""
+      set -g @dotbar-window-symbol ""
+      set -g @dotbar-date-format "%H:%M"
       
       # Plugin list
       set -g @plugin 'tmux-plugins/tpm'
-      set -g @plugin 'tmux-plugins/tmux-sensible'
-      set -g @plugin 'tmux-plugins/tmux-resurrect'
-      set -g @plugin 'tmux-plugins/tmux-continuum'
       set -g @plugin 'alexwforsythe/tmux-which-key'
-      set -g @plugin 'omerxx/catppuccin-tmux' # omerxx version
+      set -g @plugin 'omerxx/tmux-sessionx'
+      set -g @plugin 'omerxx/tmux-floax'
+      set -g @plugin 'sainnhe/tmux-fzf'
+      set -g @plugin 'vaaleyard/tmux-dotbar'
       
       # Initialize TMUX plugin manager (keep this line at the very bottom)
       run '~/.tmux/plugins/tpm/tpm'
