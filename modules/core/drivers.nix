@@ -9,8 +9,7 @@
     # AMD GPU support
     extraPackages = with pkgs; [
       amdvlk              # AMD Vulkan driver
-      rocm-opencl-icd     # OpenCL support
-      rocm-opencl-runtime
+      rocmPackages.clr    # OpenCL support (replaces rocm-opencl-icd/runtime)
     ];
     
     extraPackages32 = with pkgs; [
