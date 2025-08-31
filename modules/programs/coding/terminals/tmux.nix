@@ -40,7 +40,11 @@
       set-option -g allow-rename off
       
       # Enable true color support
-      set -ga terminal-overrides ",*256col*:Tc"
+      set -g default-terminal "tmux-256color"
+      set -ga terminal-overrides ",*256col*:RGB"
+      
+      # Status bar at the top
+      set -g status-position top
       
       # Key bindings
       bind r source-file ~/.config/tmux/tmux.conf \; display "Config reloaded!"
@@ -81,31 +85,22 @@
       set -g @continuum-boot 'on'
       set -g @continuum-save-interval '15'
       
-      # tmux-sensible is automatically configured
+      # Catppuccin theme configuration (omerxx version)
+      set -g @catppuccin_window_left_separator "█"
+      set -g @catppuccin_window_right_separator "█ "
+      set -g @catppuccin_window_number_position "right"
+      set -g @catppuccin_window_middle_separator "  █"
       
-      # Default theme (Catppuccin Mocha)
-      # Status bar
-      set -g status-position bottom
-      set -g status-justify left
-      set -g status-style 'bg=#1e1e2e fg=#cdd6f4'
-      set -g status-left '#[bg=#89b4fa,fg=#1e1e2e,bold] #S #[bg=#1e1e2e,fg=#89b4fa]'
-      set -g status-right '#[fg=#f38ba8]#[bg=#f38ba8,fg=#1e1e2e] %Y-%m-%d #[bg=#89b4fa,fg=#1e1e2e,bold] %H:%M '
-      set -g status-right-length 50
-      set -g status-left-length 20
+      set -g @catppuccin_window_default_fill "number"
       
-      # Window status
-      setw -g window-status-current-style 'fg=#1e1e2e bg=#89b4fa bold'
-      setw -g window-status-current-format ' #I#[fg=#1e1e2e]:#[fg=#1e1e2e]#W#[fg=#1e1e2e]#F '
-      setw -g window-status-style 'fg=#cdd6f4 bg=#313244'
-      setw -g window-status-format ' #I#[fg=#cdd6f4]:#[fg=#cdd6f4]#W#[fg=#cdd6f4]#F '
+      set -g @catppuccin_window_current_fill "number"
+      set -g @catppuccin_window_current_text "#{pane_current_path}"
       
-      # Pane borders
-      set -g pane-border-style 'fg=#313244'
-      set -g pane-active-border-style 'fg=#89b4fa'
-      
-      # Message style
-      set -g message-style 'bg=#f38ba8 fg=#1e1e2e bold'
-      set -g message-command-style 'bg=#f38ba8 fg=#1e1e2e bold'
+      set -g @catppuccin_status_modules_right "application session user host date_time"
+      set -g @catppuccin_status_left_separator  ""
+      set -g @catppuccin_status_right_separator ""
+      set -g @catppuccin_status_fill "all"
+      set -g @catppuccin_status_connect_separator "yes"
       
       # Plugin list
       set -g @plugin 'tmux-plugins/tpm'
@@ -113,6 +108,7 @@
       set -g @plugin 'tmux-plugins/tmux-resurrect'
       set -g @plugin 'tmux-plugins/tmux-continuum'
       set -g @plugin 'alexwforsythe/tmux-which-key'
+      set -g @plugin 'omerxx/catppuccin-tmux' # omerxx version
       
       # Initialize TMUX plugin manager (keep this line at the very bottom)
       run '~/.tmux/plugins/tpm/tpm'
@@ -130,7 +126,6 @@
     recursive = true;
   };
   
-  # Additional tmux-related packages
   home.packages = with pkgs; [
     tmuxinator  # Session manager
   ];
