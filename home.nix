@@ -43,7 +43,7 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
-    
+    lmstudio
     opencode
   
   ]);
