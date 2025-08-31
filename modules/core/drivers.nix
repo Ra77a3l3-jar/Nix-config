@@ -75,7 +75,7 @@
     # NVIDIA tools
     nvidia-vaapi-driver
     config.boot.kernelPackages.nvidia_x11.settings  # nvidia-settings
-    nvtopPackages.nvidia
+    nvtopPackages.full
     
     # AMD tools  
     radeontop
