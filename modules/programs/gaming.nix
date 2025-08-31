@@ -114,7 +114,7 @@
         io_color = "A491D3";
         background_color = "020202";
         background_alpha = "0.4";
-        font_size = 24;
+        font_size = 16;
       };
     };
   };
