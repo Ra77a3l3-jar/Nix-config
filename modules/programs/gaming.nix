@@ -31,8 +31,8 @@
     pkgs-unstable.steam-run
     pkgs-unstable.prismlauncher  # Minecraft launcher
   ] ++ (if nix-gaming ? packages.${pkgs.system} then [
-    # Nix-gaming packages if available (using deprecated proton-ge for now)
-    nix-gaming.packages.${pkgs.system}.wine-ge
+    # Nix-gaming packages if available
+    # nix-gaming.packages.${pkgs.system}.wine-ge  # Conflicts with wineWowPackages
     # nix-gaming.packages.${pkgs.system}.proton-ge  # Deprecated, use proton-ge-bin instead
   ] else []);
 
