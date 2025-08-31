@@ -22,12 +22,7 @@
     # Performance monitoring
     nvtop
     radeontop
-    
-    # Gaming-related tools
-    discord
-    teamspeak_client
-    obs-studio
-    
+        
     # Wine and compatibility
     wine
     wine64
