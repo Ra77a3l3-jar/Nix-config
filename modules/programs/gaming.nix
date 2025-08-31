@@ -18,11 +18,7 @@
     gamescope
     protontricks
     winetricks
-    
-    # Performance monitoring
-    nvtop
-    radeontop
-        
+            
     # Wine and compatibility
     wine
     wine64
