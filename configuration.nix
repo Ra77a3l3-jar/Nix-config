@@ -1,6 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+
 { config, pkgs, ... }:
 
 {
@@ -8,15 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/core/base.nix
-      ./modules/programs/coding/zsh.nix
       ./modules/desktop/gnome.nix
-      ./modules/programs/gaming.nix
-      ./modules/core/drivers.nix
-     ];
 
-    home-manager.users.raffaele = {
-      imports = [ ./home.nix ]; 
-    };
+      ./modules/programs/coding/shell/default.nix
+    ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -69,11 +65,12 @@
      zoxide
      man-pages
      man-pages-posix
-     tldr
+     eza
+     glow
   ];
 
   services.flatpak.enable = true;
 
   documentation.dev.enable = true;
    
- }
+}
