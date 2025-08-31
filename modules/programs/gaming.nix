@@ -40,7 +40,7 @@
   xdg.desktopEntries = {
     steam-nvidia = {
       name = "Steam (NVIDIA)";
-      exec = "prime-run steam";
+      exec = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia steam";
       icon = "steam";
       comment = "Launch Steam with NVIDIA GPU";
       categories = [ "Game" ];
@@ -48,7 +48,7 @@
     
     lutris-nvidia = {
       name = "Lutris (NVIDIA)";
-      exec = "prime-run lutris";
+      exec = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia lutris";
       icon = "lutris";
       comment = "Launch Lutris with NVIDIA GPU";
       categories = [ "Game" ];
@@ -112,7 +112,7 @@
         io_color = "A491D3";
         background_color = "020202";
         background_alpha = "0.4";
-        font_size = 16;
+        font_size = 24;
       };
     };
   };
