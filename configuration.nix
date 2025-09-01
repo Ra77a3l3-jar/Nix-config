@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       
       ./modules/core/base.nix
-      ./modules/core/drivers.nix
+      #./modules/core/drivers.nix
 
       ./modules/desktop/gnome.nix
 
