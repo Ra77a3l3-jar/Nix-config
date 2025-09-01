@@ -97,11 +97,6 @@
     
     # Plugins configuration
     plugins = with pkgs-unstable.tmuxPlugins; [
-      # Essential plugins
-      {
-        plugin = tmux-sensible;
-      }
-      
       # Fuzzy finding
       {
         plugin = tmux-fzf;
@@ -158,6 +153,6 @@
   
   # Install fzf as it's required for tmux-fzf plugin
   home.packages = with pkgs-unstable; [
-    fzf
+
   ];
 }
