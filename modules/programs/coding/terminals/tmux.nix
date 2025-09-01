@@ -5,10 +5,7 @@
   programs.tmux = {
     enable = true;
     package = pkgs-unstable.tmux;
-    
-    # Use zsh as the default shell in tmux
-    shell = "${pkgs.zsh}/bin/zsh";
-    
+        
     # Enable mouse support
     mouse = true;
     
@@ -29,71 +26,6 @@
     
     # Vi-style key bindings
     keyMode = "vi";
-    
-    # Custom configuration
-    extraConfig = ''
-      # Unbind default prefix
-      unbind C-b
-      
-      # Send prefix key through
-      bind C-a send-prefix
-      
-      # Pane base index
-      setw -g pane-base-index 1
-      
-      # Renumber windows when one is closed
-      set -g renumber-windows on
-      
-      # Use 256 color mode and enable RGB/truecolor support
-      set -as terminal-features ",xterm-ghostty:RGB"
-      set -as terminal-overrides ",xterm-ghostty:Tc"
-      
-      # Cursor style → vertical bar instead of block
-      set -g cursor-style 6
-      
-      # Enhanced vi-mode copy bindings
-      bind-key -T copy-mode-vi v send-keys -X begin-selection
-      bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-      bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
-      
-      # Refresh status line every 5 seconds
-      set -g status-interval 5
-      
-      # Focus events enabled for terminals that support them
-      set -g focus-events on
-      
-      # Super useful when using "grouped sessions" and multi-monitor setup
-      setw -g aggressive-resize on
-      
-      # Activity monitoring
-      setw -g monitor-activity on
-      set -g visual-activity off
-      
-      # Pane navigation with vim-like keys
-      bind h select-pane -L
-      bind j select-pane -D
-      bind k select-pane -U
-      bind l select-pane -R
-      
-      # Pane resizing with vim-like keys (repeatable)
-      bind -r H resize-pane -L 5
-      bind -r J resize-pane -D 5
-      bind -r K resize-pane -U 5
-      bind -r L resize-pane -R 5
-      
-      # Split panes with more intuitive keys
-      bind | split-window -h -c "#{pane_current_path}"
-      bind - split-window -v -c "#{pane_current_path}"
-      
-      # New window with current path
-      bind c new-window -c "#{pane_current_path}"
-      
-      # Reload config file
-      bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded!"
-      
-      # Clear screen and scrollback
-      bind C-l send-keys C-l \; run 'sleep 0.1' \; clear-history
-    '';
     
     # Plugins configuration
     plugins = with pkgs-unstable.tmuxPlugins; [
@@ -150,9 +82,4 @@
       }
     ];
   };
-  
-  # Install fzf as it's required for tmux-fzf plugin
-  home.packages = with pkgs-unstable; [
-
-  ];
 }
