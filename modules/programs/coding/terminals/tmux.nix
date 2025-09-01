@@ -104,7 +104,7 @@
       
       # Session management
       {
-        plugin = sessionx;
+        plugin = tmux-sessionx;
         extraConfig = ''
           set -g @sessionx-bind 'C-f'
         '';
