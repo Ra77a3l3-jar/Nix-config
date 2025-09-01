@@ -45,7 +45,6 @@
     zed-editor
     opencode
     gemini-cli
-    tmux
   
   ]);
 
