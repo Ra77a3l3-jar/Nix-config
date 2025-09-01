@@ -121,7 +121,7 @@
       
       # Dotbar theme
       {
-        plugin = tmux-dotbar;
+        plugin = dotbar;
         extraConfig = ''
           set -g @dotbar_theme 'default'
         '';
