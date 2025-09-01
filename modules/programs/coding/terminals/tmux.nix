@@ -1,3 +1,4 @@
+# modules/programs/coding/terminals/tmux.nix
 { config, pkgs, pkgs-unstable, ... }:
 
 {
@@ -116,7 +117,7 @@
       
       # Which-key functionality
       {
-        plugin = pkgs-unstable.tmuxPlugins.tmux-which-key;
+        plugin = tmux-which-key;
         extraConfig = ''
           set -g @which-key-show-on-prefix 'true'
           set -g @which-key-position 'bottom'
@@ -125,7 +126,7 @@
       
       # Dotbar theme
       {
-        plugin = pkgs-unstable.tmuxPlugins.tmux-dotbar;
+        plugin = tmux-dotbar;
         extraConfig = ''
           set -g @dotbar_theme 'default'
         '';
@@ -155,15 +156,8 @@
     ];
   };
   
-  # Ensure necessary packages are available system-wide
-  environment.systemPackages = with pkgs-unstable; [
-    tmux
-    fzf  # Required for tmux-fzf plugin
+  # Install fzf as it's required for tmux-fzf plugin
+  home.packages = with pkgs-unstable; [
+    fzf
   ];
-  
-  # Create tmux config directory and ensure proper permissions
-  environment.etc."tmux.conf".text = ''
-    # This file is managed by NixOS
-    # User tmux configuration is handled through programs.tmux
-  '';
 }
