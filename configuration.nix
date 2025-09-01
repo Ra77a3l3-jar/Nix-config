@@ -66,7 +66,10 @@
      man-pages-posix
      eza
      glow
-  ];
+  ] ++ (with pkgs-unstable; [
+
+    zed-editor  
+  ]);
 
   services.flatpak.enable = true;
 
