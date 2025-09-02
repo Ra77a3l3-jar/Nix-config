@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   programs.zellij = {
     enable = true;
+    package = pkgs-unstable.zellij;
     
     settings = {
       # Disable the default UI elements that take up space
@@ -41,6 +42,4 @@
       }
     }
   '';
-  
-
 }

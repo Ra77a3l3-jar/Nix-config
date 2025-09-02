@@ -20,6 +20,8 @@
       window-padding-y = 10;
       window-save-state = "always";
       window-decoration = false;
+
+      fullscreen = "true";
       
       background-opacity = 0.96;
       background-blur-radius = 25;
