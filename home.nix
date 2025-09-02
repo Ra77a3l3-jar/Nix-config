@@ -48,7 +48,7 @@
     gemini-cli
     qwen-code
 
-    resonance
+    gapless
   
   ]);
 
