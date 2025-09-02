@@ -46,7 +46,7 @@
     
     opencode
     gemini-cli
-    crush
+    qwen-code
   
   ]);
 
