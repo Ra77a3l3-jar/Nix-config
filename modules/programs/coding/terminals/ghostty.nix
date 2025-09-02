@@ -12,7 +12,7 @@
       adjust-cell-width = "0%";
       
       cursor-style = "block";
-      cursor-style-blink = "flase";
+      cursor-style-blink = "false";
       
       scrollback-limit = 50000;
       
