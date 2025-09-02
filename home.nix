@@ -43,10 +43,11 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
+    zellij
+    
     opencode
     gemini-cli
-
-    tmux
+    crush
   
   ]);
 
