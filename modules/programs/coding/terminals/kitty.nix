@@ -17,10 +17,9 @@
       adjust_column_width = "0%";
       
       # Cursor
-      cursor_shape = "block";
+      cursor_shape = "beam";
       cursor_blink_interval = "0";
-      cursor_stop_blinking_after = "15.0";
-      cursor_trail = "0";
+      cursor_trail = "1";
       
       # Scrollback
       scrollback_lines = 20000;
