@@ -7,14 +7,14 @@
       theme = "VibrantInk";
       
       font-family = "Ubuntu Nerd Font";
-      font-size = 14;
+      font-size = 12;
       font-thicken = true;
       adjust-cell-width = "0%";
       
-      cursor-style = "bar";
-      cursor-style-blink = true;
+      cursor-style = "block";
+      cursor-style-blink = flase;
       
-      scrollback-limit = 20000;
+      scrollback-limit = 50000;
       
       window-padding-x = 10;
       window-padding-y = 10;
