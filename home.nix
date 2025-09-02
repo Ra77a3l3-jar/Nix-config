@@ -47,6 +47,8 @@
     opencode
     gemini-cli
     qwen-code
+
+    euphonica
   
   ]);
 
