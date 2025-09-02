@@ -24,6 +24,20 @@
       # Disable session serialization to avoid clutter
       session_serialization = false;
       
+      # Disable startup tips
+      show_startup_tips = false;
+      
+      # UI customization for minimal borders
+      ui = {
+        pane_frames = {
+          rounded_corners = false;
+          hide_session_name = true;
+        };
+      };
+      
+      # Pane configuration for minimal borders
+      pane_frames = false;
+      
 
     };
   };
