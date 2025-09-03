@@ -45,7 +45,6 @@
     zed-editor
 
     steam
-    jdk8
     
     opencode
     gemini-cli
