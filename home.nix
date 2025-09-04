@@ -43,8 +43,6 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
-
-    steam
     
     opencode
     gemini-cli
