@@ -13,6 +13,12 @@
       loguru
       restrictedpython
       
+      fastapi
+      uvicorn
+      sqlalchemy
+      python-multipart
+      jinja2
+      
       # AI/ML libraries
       tensorflow
       torch
@@ -25,8 +31,7 @@
       google-generativeai
       anthropic
       langchain-deepseek
-      
-            
+                  
       requests
       pip
     ]))
