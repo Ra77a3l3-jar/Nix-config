@@ -5,7 +5,8 @@
   imports = [
     ./git.nix
     ./l-config.nix
-    #./docker.nix	  
+    ./docker.nix
+    ./podman.nix
   ];
 
 }
