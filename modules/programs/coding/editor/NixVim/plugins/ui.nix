@@ -715,7 +715,7 @@
             fzf_lua = {};
             nui = {
               position = "50%";
-              size = nil;
+              size = null;
               relative = "editor";
               border = {
                 style = "rounded";
