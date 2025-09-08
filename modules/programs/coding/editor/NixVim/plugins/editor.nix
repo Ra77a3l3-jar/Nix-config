@@ -471,7 +471,7 @@
             b = ")"; # brackets
             B = "}"; # braces
             r = "]"; # square brackets
-            q = ['"' "'" "`"];
+            q = [ "\"" "'" "`" ]; # quotes
           };
           highlight = { duration = 500; };
           move_cursor = "begin";
