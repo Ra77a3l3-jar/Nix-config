@@ -685,7 +685,7 @@
             border = "rounded";
             relative = "cursor";
             prefer_width = 40;
-            width = nil;
+            width = null;
             buf_options = {};
             win_options = {
               winblend = 0;
