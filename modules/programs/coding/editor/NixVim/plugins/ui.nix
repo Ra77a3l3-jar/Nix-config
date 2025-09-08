@@ -388,7 +388,11 @@
               search_down = { kind = "search"; pattern = "^/"; icon = " "; lang = "regex"; };
               search_up = { kind = "search"; pattern = "^%?"; icon = " "; lang = "regex"; };
               filter = { pattern = "^:%s*!"; icon = "$"; lang = "bash"; };
-              lua = { pattern = { "^:%s*lua%s+"; "^:%s*lua%s*=%s*"; "^:%s*=%s*"; }; icon = ""; lang = "lua"; };
+              lua = {
+                pattern = [ "^:%s*lua%s+" "^:%s*lua%s*=%s*" "^:%s*=%s*" ];
+                icon = "";
+                lang = "lua";
+              };
               help = { pattern = "^:%s*he?l?p?%s+"; icon = ""; };
               input = {};
             };
@@ -419,7 +423,7 @@
                   { event = "notify"; }
                   { error = true; }
                   { warning = true; }
-                  { event = "msg_show"; kind = { ""; }; }
+                  { event = "msg_show"; kind = [ "" ]; }
                   { event = "lsp"; kind = "message"; }
                 ];
               };
@@ -432,7 +436,7 @@
                   { event = "notify"; }
                   { error = true; }
                   { warning = true; }
-                  { event = "msg_show"; kind = { ""; }; }
+                  { event = "msg_show"; kind = [ "" ]; }
                   { event = "lsp"; kind = "message"; }
                 ];
               };
@@ -454,7 +458,7 @@
           };
           smart_move = {
             enabled = true;
-            excluded_filetypes = { "cmp_menu"; "cmp_docs"; "notify"; };
+            excluded_filetypes = [ "cmp_menu" "cmp_docs" "notify" ];
           };
           throttle = 1000 / 30;
           views = {
@@ -480,7 +484,7 @@
               };
               border = {
                 style = "rounded";
-                padding = { 0; 1; };
+                padding = [ 0 1 ];
               };
               win_options = {
                 winhighlight = "Normal:Normal,FloatBorder:DiagnosticInfo";
@@ -675,43 +679,31 @@
           input = {
             enabled = true;
             default_prompt = "Input:";
-            title_pos = "left";
+            prompt_align = "left";
             insert_only = true;
-            start_in_insert = true;
             anchor = "SW";
             border = "rounded";
             relative = "cursor";
             prefer_width = 40;
-            width = null;
-            max_width = { 140; 0.9; };
-            min_width = { 20; 0.2; };
+            width = nil;
             buf_options = {};
             win_options = {
+              winblend = 0;
               wrap = false;
-              list = true;
-              listchars = "precedes:…,extends:…";
-              sidescrolloff = 0;
             };
             mappings = {
-              n = {
-                "<Esc>" = "Close";
-                "<CR>" = "Confirm";
-              };
-              i = {
-                "<C-c>" = "Close";
-                "<CR>" = "Confirm";
-                "<Up>" = "HistoryPrev";
-                "<Down>" = "HistoryNext";
-              };
+              n = { q = "Close"; };
+              i = { "<C-c>" = "Close"; "<CR>" = "Confirm"; };
             };
-            override = {
-              __raw = "function(conf) return conf end";
-            };
+            override = null;
             get_config = null;
+            winhighlight = "Normal:Normal,FloatBorder:DiagnosticInfo";
+            max_width = [ 140 0.9 ];
+            min_width = [ 20 0.2 ];
           };
           select = {
             enabled = true;
-            backend = ["telescope" "fzf_lua" "fzf" "builtin" "nui"];
+            backend = ["telescope" "fzf" "fzf_lua" "nui" "builtin"];
             trim_prompt = true;
             telescope = null;
             fzf = {
@@ -720,15 +712,10 @@
                 height = 0.4;
               };
             };
-            fzf_lua = {
-              winopts = {
-                height = 0.5;
-                width = 0.5;
-              };
-            };
+            fzf_lua = {};
             nui = {
               position = "50%";
-              size = null;
+              size = nil;
               relative = "editor";
               border = {
                 style = "rounded";
@@ -742,143 +729,29 @@
               };
               max_width = 80;
               max_height = 40;
-              min_width = 40;
-              min_height = 10;
+              min_width = [ 40 0.2 ];
+              min_height = [ 10 0.2 ];
             };
             builtin = {
-              show_numbers = true;
               border = "rounded";
               relative = "editor";
-              buf_options = {};
               win_options = {
-                cursorline = true;
                 winblend = 0;
               };
-              width = null;
-              max_width = 0.8;
-              min_width = { 40; 0.2; };
-              height = null;
-              max_height = 0.9;
-              min_height = { 10; 0.2; };
-              override = {
-                __raw = "function(conf) return conf end";
-              };
+              width = nil;
+              max_width = 80;
+              min_width = 40;
+              height = nil;
+              max_height = 40;
+              min_height = 10;
+              override = null;
             };
             format_item_override = {};
             get_config = null;
           };
         };
       };
-
-      # Indent-blankline - Elegant indent guides
-      indent-blankline = {
-        enable = true;
-        settings = {
-          indent = {
-            char = "│";
-            tab_char = "│";
-          };
-          scope = {
-            enabled = true;
-            show_start = true;
-            show_end = false;
-            injected_languages = false;
-            highlight = ["Function" "Label"];
-            priority = 500;
-          };
-          exclude = {
-            filetypes = [
-              "help"
-              "alpha"
-              "dashboard"
-              "neo-tree"
-              "Trouble"
-              "trouble"
-              "lazy"
-              "mason"
-              "notify"
-              "toggleterm"
-              "lazyterm"
-            ];
-          };
-        };
-      };
-
-      # Rainbow delimiters - Color-coded bracket pairs
-      rainbow-delimiters = {
-        enable = true;
-        settings = {
-          strategy = {
-            "" = "rainbow-delimiters.strategy.global";
-            vim = "rainbow-delimiters.strategy.local";
-          };
-          query = {
-            "" = "rainbow-delimiters";
-            lua = "rainbow-blocks";
-          };
-          priority = {
-            "" = 110;
-            lua = 210;
-          };
-          highlight = [
-            "RainbowDelimiterRed"
-            "RainbowDelimiterYellow"
-            "RainbowDelimiterBlue"
-            "RainbowDelimiterOrange"
-            "RainbowDelimiterGreen"
-            "RainbowDelimiterViolet"
-            "RainbowDelimiterCyan"
-          ];
-        };
-      };
-
-      # Smooth scrolling
-      neoscroll = {
-        enable = true;
-        settings = {
-          mappings = ["<C-u>" "<C-d>" "<C-b>" "<C-f>" "<C-y>" "<C-e>" "zt" "zz" "zb"];
-          hide_cursor = true;
-          stop_eof = true;
-          respect_scrolloff = false;
-          cursor_scrolls_alone = true;
-          easing_function = null;
-          pre_hook = null;
-          post_hook = null;
-          performance_mode = false;
-        };
-      };
     };
-
-    # Additional UI configuration
-    extraConfigLua = ''
-      -- Set up rainbow delimiter colors
-      vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { fg = "#eb6f92" })
-      vim.api.nvim_set_hl(0, "RainbowDelimiterYellow", { fg = "#f6c177" })
-      vim.api.nvim_set_hl(0, "RainbowDelimiterBlue", { fg = "#3e8fb0" })
-      vim.api.nvim_set_hl(0, "RainbowDelimiterOrange", { fg = "#ea9a97" })
-      vim.api.nvim_set_hl(0, "RainbowDelimiterGreen", { fg = "#9ccfd8" })
-      vim.api.nvim_set_hl(0, "RainbowDelimiterViolet", { fg = "#c4a7e7" })
-      vim.api.nvim_set_hl(0, "RainbowDelimiterCyan", { fg = "#9ccfd8" })
-
-      -- Enhanced fold text
-      _G.custom_fold_text = function()
-        local line = vim.fn.getline(vim.v.foldstart)
-        local line_count = vim.v.foldend - vim.v.foldstart + 1
-        return "  " .. line .. "  " .. line_count .. " lines"
-      end
-
-      vim.opt.foldtext = "v:lua.custom_fold_text()"
-
-      -- Auto-close Alpha when opening a file
-      vim.api.nvim_create_autocmd({"User"}, {
-        pattern = "AlphaReady",
-        callback = function()
-          if vim.o.filetype == "alpha" then
-            local esc_key = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
-            vim.api.nvim_feedkeys(esc_key, "n", false)
-          end
-        end
-      })
-    '';
   };
 }
+
