@@ -738,10 +738,10 @@
               win_options = {
                 winblend = 0;
               };
-              width = nil;
+              width = null;
               max_width = 80;
               min_width = 40;
-              height = nil;
+              height = null;
               max_height = 40;
               min_height = 10;
               override = null;
