@@ -50,7 +50,10 @@
 
     gapless
   
-  ]);
+  ]) ++ [
+    # External packages
+    zen-browser.packages.${pkgs.system}.default
+  ];
 
   programs.home-manager.enable = true;
 }
