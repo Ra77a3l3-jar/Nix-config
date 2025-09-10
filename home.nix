@@ -43,8 +43,8 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
-    
-    opencode
+    qwen-code
+    gemini-cli    
   
   ]);
 
