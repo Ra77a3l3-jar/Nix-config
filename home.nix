@@ -33,6 +33,7 @@
     ripgrep
     yazi
     glow
+    unzip
     
     obsidian
     libreoffice
