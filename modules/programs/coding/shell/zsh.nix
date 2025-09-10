@@ -24,6 +24,9 @@
 
       alias hm-reload='source ~/.nix-profile/etc/profile.d/hm-session-vars.sh'
       alias nos-rebuild='nixos-rebuild switch --flake ./#nixos --verbose'
+      alias nos-test='sudo nixos-rebuild test --flake /etc/nixos#nixos'
+
+      alias nos-clean='sudo nix-collect-garbage -d'
     
       alias ex='exit'
       alias gs='git status'
