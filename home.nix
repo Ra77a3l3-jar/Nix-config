@@ -43,12 +43,8 @@
     webex
   ] ++ (with pkgs-unstable; [
 
-    zed-editor
-    
+    zed-editor    
     opencode
-    gemini-cli
-    qwen-code
-
     gapless
   
   ]) ++ [
