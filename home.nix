@@ -53,7 +53,7 @@
   ];
 
   home.sessionVariables = {
-    MANPAGER = "sh -c 'col -bx | bat -l man -p'"
+    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
   };
 
   programs.home-manager.enable = true;
