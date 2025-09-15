@@ -7,7 +7,7 @@
     ./modules/programs/coding/terminals/default.nix
     ./modules/programs/flatpak.nix
     #./modules/programs/gaming.nix
-    ./modules/programs/music.nix
+    #./modules/programs/music.nix
     
     ./modules/programs/coding/editor/default.nix
 

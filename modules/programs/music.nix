@@ -4,12 +4,12 @@
   home.packages = with pkgs; [
     mpd
     mpc
-  ] ++ [ pkgs-unstable.rmpd ];
+  ] ++ [ pkgs-unstable.rmpc ];
 
   # Optional: Basic MPD configuration
   xdg.configFile."mpd/mpd.conf".text = ''
-    music_directory "~/Music"
-    playlist_directory "~/Music/playlists"
+    music_directory "~/Musica"
+    playlist_directory "~/Musica/playlists"
     db_file "~/.config/mpd/database"
     log_file "~/.config/mpd/log"
     pid_file "~/.config/mpd/pid"
