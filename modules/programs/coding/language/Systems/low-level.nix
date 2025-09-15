@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    gfortran
+    #gfortran
     fortls
     
     fbc
