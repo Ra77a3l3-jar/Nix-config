@@ -44,7 +44,10 @@
     webex
   ] ++ (with pkgs-unstable; [
 
-    zed-editor    
+    zed-editor
+    kiro
+    code-cursor
+        
     opencode
     gapless
   
