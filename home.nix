@@ -8,7 +8,6 @@
     ./modules/programs/flatpak.nix
     
     ./modules/programs/coding/editor/default.nix
-    ./modules/programs/networking/default.nix
     ./modules/programs/coding/language/default.nix
   ];
   

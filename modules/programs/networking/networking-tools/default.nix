@@ -1,9 +1,0 @@
-{ ... }:
-
-{
-
-  imports = [
-    ./wireshark.nix
-  ];
-  
-}
