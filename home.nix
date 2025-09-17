@@ -6,8 +6,6 @@
   imports = [
     ./modules/programs/coding/terminals/default.nix
     ./modules/programs/flatpak.nix
-    #./modules/programs/gaming.nix
-    #./modules/programs/music.nix
     
     ./modules/programs/coding/editor/default.nix
 
@@ -45,7 +43,6 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
-    kiro
     code-cursor
         
     opencode
