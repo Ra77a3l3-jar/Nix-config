@@ -29,6 +29,9 @@
       alias hs='history'
       alias cd='z'
 
+      alias lgit='lazygit'
+      alias ldoc='lazydocker'
+
       alias la='eza -la --icons'
       alias ltree='eza --tree --level=3 --long --git --icons'
       alias l='eza -l --icons --only-files'
