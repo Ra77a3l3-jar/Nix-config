@@ -18,8 +18,8 @@
       
       # Cursor
       cursor_shape = "beam";
-      cursor_blink_interval = "0.5";
-      cursor_stop_blinking_after = "15.0";
+      cursor_blink_interval = "0";
+      cursor_trail = "1";
       
       # Scrollback
       scrollback_lines = 20000;
