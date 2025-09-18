@@ -10,6 +10,7 @@
     ./modules/programs/coding/editor/default.nix
     ./modules/programs/coding/language/default.nix
     ./modules/programs/networking/default.nix
+    ./modules/programs/robotics/default.nix
   ];
   
   home.username = "raffaele";
