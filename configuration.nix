@@ -34,6 +34,13 @@
       wheelNeedsPassword = false;
     };
 
+  virtualisation.docker.enable = true;
+
+  virtualisation.docker.rootless = {
+     enable = true;
+     setSocketVariable = true;
+  };
+
   users.groups.raffaele = {};
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -41,7 +48,7 @@
     isNormalUser = true;
     group = "raffaele";
     description = "raffaele";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     
     ];
