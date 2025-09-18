@@ -36,6 +36,8 @@
       wheelNeedsPassword = false;
     };
 
+  virtualisation.docker.enable = true;
+
   users.groups.raffaele = {};
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
