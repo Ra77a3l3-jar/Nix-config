@@ -43,7 +43,7 @@
     isNormalUser = true;
     group = "raffaele";
     description = "raffaele";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     
     ];
