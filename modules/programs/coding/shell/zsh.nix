@@ -12,17 +12,12 @@
     };
     
     interactiveShellInit = ''
-      export PATH="$HOME/.local/bin:$PATH"
       export PATH="$HOME/.nix-profile/bin:$PATH"
-      export MANPAGER="batman"
       export EDITOR="hx"
       export VISUAL="hx"
-
-      export GOOGLE_CLOUD_PROJECT="peak-hangout-469915-d6"
       
       eval "$(zoxide init zsh)"
 
-      alias hm-reload='source ~/.nix-profile/etc/profile.d/hm-session-vars.sh'
       alias nos-rebuild='nixos-rebuild switch --flake ./#nixos --verbose'
       alias nos-test='sudo nixos-rebuild test --flake /etc/nixos#nixos'
 
@@ -34,6 +29,9 @@
       alias cl='clear'
       alias hs='history'
       alias cd='z'
+
+      alias lgit='lazygit'
+      alisa ldoc='lazydocker'
 
       alias la='eza -la --icons'
       alias ltree='eza --tree --level=3 --long --git --icons'

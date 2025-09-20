@@ -38,6 +38,11 @@
 
   virtualisation.docker.enable = true;
 
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  }
+
   users.groups.raffaele = {};
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -62,13 +67,13 @@
      keepassxc
      wget
      curl
-     tree
      lazygit
      zoxide
      man-pages
      man-pages-posix
      eza
      glow
+     xorg.xhost
   ];
 
   services.flatpak.enable = true;
