@@ -41,7 +41,7 @@
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
-  }
+  };
 
   users.groups.raffaele = {};
   
