@@ -31,6 +31,7 @@
 
       alias lgit='lazygit'
       alias ldoc='lazydocker'
+      alias leetui='nix run github:akarsh1995/leetcode-tui'
 
       alias la='eza -la --icons'
       alias ltree='eza --tree --level=3 --long --git --icons'
