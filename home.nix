@@ -47,7 +47,6 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
-    code-cursor
         
     opencode
     gapless
