@@ -4,6 +4,8 @@
 
   home.packages = with pkgs; [
      rustup
+     pkg-config
+     alsa-lib
   ];
 
   programs.helix.languages = {
