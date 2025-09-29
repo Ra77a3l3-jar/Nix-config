@@ -3,8 +3,8 @@
 {
 
   imports = [
-    ./julia.nix
-    ./lua.nix
+    #./julia.nix
+    #./lua.nix
     ./python.nix 
   ];
 
