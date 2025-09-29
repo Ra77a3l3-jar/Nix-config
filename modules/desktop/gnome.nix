@@ -15,6 +15,11 @@
     variant = "";
   };
 
+
+  # Enable keyring
+  security.pam.services.gdm.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

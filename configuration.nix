@@ -34,6 +34,8 @@
       wheelNeedsPassword = false;
     };
 
+  # Virtualisation
+  
   virtualisation.docker.enable = true;
 
   virtualisation.docker.rootless = {
