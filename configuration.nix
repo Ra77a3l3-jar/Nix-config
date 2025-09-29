@@ -76,7 +76,6 @@
      glow
      xorg.xhost
     
-     yubikey-manager-qt
      yubikey-manager
   ] ++ (with pkgs-unstable; [
 
