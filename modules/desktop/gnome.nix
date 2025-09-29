@@ -40,6 +40,7 @@
     gnome-tweaks
     gnome-extension-manager
     yaru-theme
+    gnome-keyring
   ];
 
   programs.dconf.enable = true;
