@@ -17,6 +17,7 @@
 
 
   # Enable keyring
+  security.pam.services.login.enableGnomeKeyring = true;
   security.pam.services.gdm.enableGnomeKeyring = true;
   services.gnome.gnome-keyring.enable = true;
 

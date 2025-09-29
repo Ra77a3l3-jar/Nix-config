@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       
-      ./modules/core/base.nix
+      ./modules/core/default.nix
 
       ./modules/desktop/gnome.nix
 
@@ -75,8 +75,6 @@
      eza
      glow
      xorg.xhost
-    
-     yubikey-manager
   ] ++ (with pkgs-unstable; [
 
   ]);
