@@ -8,7 +8,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/core/base.nix
+      
+      ./modules/core/default.nix
+
       ./modules/desktop/gnome.nix
 
       ./modules/programs/coding/shell/default.nix

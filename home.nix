@@ -8,7 +8,7 @@
     ./modules/programs/coding/terminals/default.nix
     ./modules/programs/flatpak.nix
     
-    ./modules/programs/coding/editor/helix/default.nix
+    ./modules/programs/coding/editor/default.nix
 
     ./modules/programs/coding/language/default.nix
 
@@ -46,7 +46,6 @@
   ] ++ (with pkgs-unstable; [
 
     zed-editor
-
     opencode
   
   ]);
