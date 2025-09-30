@@ -15,6 +15,12 @@
     variant = "";
   };
 
+
+  # Enable keyring
+  security.pam.services.login.enableGnomeKeyring = true;
+  security.pam.services.gdm.enableGnomeKeyring = true;
+  services.gnome.gnome-keyring.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -35,9 +41,9 @@
     gnome-tweaks
     gnome-extension-manager
     yaru-theme
+    gnome-keyring
   ];
 
-  # Enable dconf (required for GNOME font settings)
   programs.dconf.enable = true;
 
   environment.gnome.excludePackages = (with pkgs; [
@@ -61,7 +67,7 @@
     eog
     simple-scan
     gnome-font-viewer
-    seahorse
+    # seahorse               Manage Keyring
     yelp
     gnome-calendar
     rhythmbox
