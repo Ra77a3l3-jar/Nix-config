@@ -67,7 +67,7 @@
     eog
     simple-scan
     gnome-font-viewer
-    seahorse
+    # seahorse               Manage Keyring
     yelp
     gnome-calendar
     rhythmbox
