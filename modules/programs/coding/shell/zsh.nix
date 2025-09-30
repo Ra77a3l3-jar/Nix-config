@@ -31,7 +31,7 @@
       alias cd='z'
 
       alias lgit='lazygit'
-      alisa ldoc='lazydocker'
+      alias ldoc='lazydocker'
 
       alias la='eza -la --icons'
       alias ltree='eza --tree --level=3 --long --git --icons'
