@@ -8,8 +8,8 @@
     settings = {
       # theme = "github_dark_high_contrast";
       # theme = "ashen";
-       theme = "ayu_evolve";
-      # theme = "base16-black-metal";
+      # theme = "ayu_evolve";
+       theme = "base16-black-metal";
       # theme = "base16-black-metal-vibrant";
 
       
