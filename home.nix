@@ -37,6 +37,8 @@
     yazi
     glow
     unzip
+    mpv
+    ffmpeg
     
     obsidian
     libreoffice
