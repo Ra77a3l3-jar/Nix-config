@@ -50,7 +50,6 @@
 
     zed-editor        
     opencode
-    gh-copilot
     gapless
   
   ]) ++ [
