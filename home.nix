@@ -48,9 +48,9 @@
     webex
   ] ++ (with pkgs-unstable; [
 
-    zed-editor
-        
+    zed-editor        
     opencode
+    github-copilot-cli
     gapless
   
   ]) ++ [
