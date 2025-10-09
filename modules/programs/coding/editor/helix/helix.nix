@@ -21,6 +21,7 @@
         auto-format = true;
         true-color = true;
         auto-completion = true;
+        completion-trigger-len = 1; # Default 2
 
         cursor-shape = {
           insert = "block";
