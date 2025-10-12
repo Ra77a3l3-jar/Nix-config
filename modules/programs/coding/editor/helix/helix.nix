@@ -20,6 +20,7 @@
         mouse = false;
         auto-format = true;
         true-color = true;
+        color-modes = true;
         auto-completion = true;
         completion-trigger-len = 1; # Default 2
 
@@ -46,6 +47,11 @@
             select = "SEL";
           };
         };
+
+        inline-diagnostics = {
+          # cursor-line = "warning"  
+        };
+        
       };
     };
   };
