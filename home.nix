@@ -51,6 +51,7 @@
     zed-editor        
     opencode
     gapless
+    github-desktop
   
   ]) ++ [
     # External packages
