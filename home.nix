@@ -51,7 +51,6 @@
     zed-editor        
     opencode
     gapless
-    warp-terminal
   
   ]) ++ [
     # External packages
