@@ -3,7 +3,14 @@
 {
 
   home.packages = with pkgs; [
+    # C++ specific tools (inherits clang from C)
+    pkg-config
+    valgrind
     
+    # Performance analysis tools
+    # perf-tools
+    # strace
+    # ltrace
   ];
 
   programs.helix.languages = {
