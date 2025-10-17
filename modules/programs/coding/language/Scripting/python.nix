@@ -1,55 +1,61 @@
 { pkgs, pkgs-unstable, ... }:
 
 {
-
   home.packages = with pkgs; [
     (python3.withPackages (ps: with ps; [
-
+      # Data Science & Scientific Computing
       numpy
       scipy
       matplotlib
-      streamlit
-      python-dotenv
-      loguru
-      restrictedpython
+      pandas
+      sympy
+      seaborn
+      plotly
+      scikit-learn
+      statsmodels
+      networkx
+      numba
+      manim
       
-      fastapi
-      uvicorn
-      sqlalchemy
-      python-multipart
-      jinja2
+      # Data handling
+      pillow
+      imageio
+      h5py
+      openpyxl
+      xlrd
       
-      # AI/ML libraries
+      # Development & Analysis
+      jupyter
+      ipython
+      notebook
+      
+     # AI/ML libraries
       tensorflow
       torch
-      scikit-learn
       opencv4
 
-      # AI
-      openai
-      langchain-mistralai
-      google-generativeai
-      anthropic
-      langchain-deepseek
-                  
+     # Utilities
       requests
       pip
+      virtualenv
+      
+      # Python LSP packages
+      python-lsp-server
+      # pylsp-mypy
+      # python-lsp-black
+      # pylsp-rope
     ]))
-    
-    # Python LSP server for Helix
-    python3Packages.python-lsp-server
   ];
 
   programs.helix.languages = {
-
     language = [
       {
         name = "python";
         scope = "source.python";
         language-servers = [ "pylsp" ];
         indent = {
-        tab-width = 4;
-        unit = "    ";
+          tab-width = 4;
+          unit = "    ";
         };
       }
     ];
