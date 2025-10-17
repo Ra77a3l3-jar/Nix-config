@@ -17,7 +17,7 @@
     # libtool
     
     # Graphics Libraries
-    libGL
+    libGL.dev
     libGLU.dev
     mesa
     glfw
