@@ -32,7 +32,6 @@
 
       alias lgit='lazygit'
       alias ldoc='lazydocker'
-      alias leetui='nix run github:akarsh1995/leetcode-tui'
 
       alias la='eza -la --icons'
       alias ltree='eza --tree --level=3 --long --git --icons'
@@ -46,6 +45,8 @@
       alias lbig='eza -l --icons --sort=size | head -n 10'
       alias lg='eza -l --git --icons'
       alias lt='eza --git --tree -l --icons'
+
+      export CPLUS_INCLUDE_PATH="${pkgs.glew.dev}/include:${pkgs.glfw}/include:${pkgs.libGLU}/include"
 
     '';
   };

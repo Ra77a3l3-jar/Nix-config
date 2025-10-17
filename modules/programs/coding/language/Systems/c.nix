@@ -47,11 +47,6 @@
       pkgs.glfw
       pkgs.glew
     ];
-
-    CPLUS_INCLUDE_PATH = ''
-      ${pkgs.glew.dev}/include:${pkgs.glfw}/include:${pkgs.libGLU}/include
-    '';
-    
   };
 
   programs.helix.languages = {
