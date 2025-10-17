@@ -21,7 +21,7 @@
     libGLU
     mesa
     glfw
-    glew
+    glew.dev
     glm
     SDL2
     freeglut
@@ -38,6 +38,21 @@
     # xorg.libXpm
     # xorg.libXaw
   ];
+
+  home.sessionVariables = {
+    PKG_CONFIG_PATH = pkgs.lib.makeSearchPath "lib/pkgconfig" [
+      pkgs.libGL
+      pkgs.libGLU
+      pkgs.mesa
+      pkgs.glfw
+      pkgs.glew
+    ];
+
+    CPLUS_INCLUDE_PATH = ''
+      ${pkgs.glew.dev}/include:${pkgs.glfw}/include:${pkgs.libGLU}/include
+    '';
+    
+  };
 
   programs.helix.languages = {
     language = [
