@@ -18,7 +18,7 @@
     
     # Graphics Libraries
     libGL
-    libGLU
+    libGLU.dev
     mesa
     glfw
     glew.dev
