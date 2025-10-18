@@ -39,6 +39,7 @@
     unzip
     mpv
     ffmpeg
+    musikcube
     
     obsidian
     libreoffice
