@@ -7,7 +7,7 @@
       theme = "VibrantInk";
       
       font-family = "Ubuntu Nerd Font";
-      font-size = 14;
+      font-size = 13;
       font-thicken = true;
       adjust-cell-width = "0%";
       
