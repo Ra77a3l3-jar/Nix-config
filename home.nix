@@ -52,6 +52,7 @@
     zed-editor        
     opencode
     gapless
+    kiro
   
   ]) ++ [
     # External packages
