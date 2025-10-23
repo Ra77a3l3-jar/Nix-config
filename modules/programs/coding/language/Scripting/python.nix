@@ -15,6 +15,7 @@
       statsmodels
       networkx
       numba
+      manimgl
       manim
       
       # Data handling
