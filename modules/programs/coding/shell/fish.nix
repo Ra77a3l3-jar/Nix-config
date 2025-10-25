@@ -1,8 +1,13 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 
 {
+  environment.systemPackages = with pkgs-unstable; [
+    oh-my-posh
+  ];
+
   programs.fish = {
     enable = true;
+    package = pkgs-unstable.fish;
 
     interactiveShellInit = ''
       # Remove greeting
@@ -12,15 +17,24 @@
       fish_add_path $HOME/.local/bin
       fish_add_path $HOME/.nix-profile/bin
 
-      # Environment variable
-      set -gx MANPAGER batman
-
       # zoxide init
       if type -q zoxide
         zoxide init fish | source
       end
+
+      # oh-my-posh prompt initialization
+      if type -q oh-my-posh
+        oh-my-posh init fish --config ~/.cache/oh-my-posh/themes/zash.omp.json | source
+      end
+
+      # Auto-start zellij only if not already inside it
+      if type -q zellij
+        if not set -q ZELLIJ
+          exec zellij
+        end
+      end
     '';
-    
+
     shellAliases = {
       ex = "exit";
       gs = "git status";
@@ -40,33 +54,8 @@
       lbig = "eza -l --icons --sort=size | head -n 10";
       lg = "eza -l --git --icons";
       lt = "eza --git --tree -l --icons";
-};
-
-    promptInit = ''
-      function fish_prompt
-        set -l cwd (prompt_pwd)
-        set -l user (whoami)
-        set -l host (hostname -s)
-        set -l git_branch ""
-        if type -q git
-          set -l branch (git rev-parse --abbrev-ref HEAD ^/dev/null 2>/dev/null)
-          if test -n "$branch"
-            set git_branch " [$branch]"
-          end
-        end
-        set_color blue
-        echo -n "$user@$host"
-        set_color normal
-        echo -n ":"
-        set_color cyan
-        echo -n "$cwd"
-        set_color green
-        echo -n "$git_branch"
-        set_color normal
-        echo -n "\n❯ "
-      end
-    '';
+    };
   };
 
-  # users.defaultUserShell = pkgs.fish;
+  #users.defaultUserShell = pkgs-unstable.fish;
 }
