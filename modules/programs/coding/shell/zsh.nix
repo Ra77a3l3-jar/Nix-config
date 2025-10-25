@@ -52,5 +52,6 @@
   };
 
   #users.defaultUserShell = pkgs.zsh;
-  users.users.root.shell = pkgs.zsh;
+  #users.users.root.shell = pkgs.zsh;
+  #users.users.raffaele.shell = pkgs.zsh;
 }

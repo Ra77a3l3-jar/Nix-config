@@ -117,4 +117,5 @@
 
   #users.defaultUserShell = pkgs-unstable.fish;
   users.users.raffaele.shell = pkgs-unstable.fish;
+  users.users.root.shell = pkgs-unstable.fish;
 }
