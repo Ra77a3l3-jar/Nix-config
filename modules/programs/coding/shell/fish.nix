@@ -41,10 +41,18 @@
       nos-clean = "sudo nix-collect-garbage -d";
       
       ex = "exit";
-      gs = "git status";
       zl = "zellij";
       cl = "clear";
       hs = "history";
+      cd = "z";
+
+      gs = "git status";
+      gc = "git checkout";
+      ga = "git add";
+      gdf = "git diff";
+      gf = "git fetch";
+      gp = "git pull";
+      gP = "git push";
 
       lgit = "lazygit";
       ldoc = "lazydocker";
