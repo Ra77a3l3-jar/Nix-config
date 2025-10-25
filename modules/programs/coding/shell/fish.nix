@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs-unstable; [
-    oh-my-posh
+    #oh-my-posh
   ];
 
   programs.fish = {
@@ -23,9 +23,9 @@
       end
 
       # oh-my-posh prompt initialization
-      if type -q oh-my-posh
-        oh-my-posh init fish --config ~/.cache/oh-my-posh/themes/zash.omp.json | source
-      end
+      #if type -q oh-my-posh
+      #  oh-my-posh init fish --config ~/.cache/oh-my-posh/themes/zash.omp.json | source
+      #end
 
       # Auto-start zellij only if not already inside it
       if type -q zellij
@@ -62,7 +62,51 @@
       lg = "eza -l --git --icons";
       lt = "eza --git --tree -l --icons";
     };
+
+    promptInit = ''
+      function fish_prompt
+        # @username in red (#E36464)
+        set_color E36464
+        echo -n '@'(whoami)' '
+        
+        # Arrow in green (#62ED8B)
+        set_color 62ED8B
+        echo -n '➜ '
+        
+        # Current directory in cyan (#56B6C2)
+        set_color 56B6C2
+        echo -n (basename (prompt_pwd))
+        
+        # Git branch in purple/yellow if in a git repo
+        if type -q git
+          set -l branch (git rev-parse --abbrev-ref HEAD 2>/dev/null)
+          if test -n "$branch"
+            # "git(" in yellow (#DDB15F)
+            set_color DDB15F
+            echo -n ' git('
+            # Branch name in purple (#D4AAFC)
+            set_color D4AAFC
+            echo -n "$branch"
+            # Closing ")" in yellow (#DDB15F)
+            set_color DDB15F
+            echo -n ')'
+          end
+        end
+        
+        # Status indicator in gold (#DCB977) if last command failed
+        if test $status -ne 0
+          set_color DCB977
+          echo -n ' '
+        end
+        
+        # Reset color and add space
+        set_color normal
+        echo -n ' '
+      end
+    '';
+    
   };
 
   #users.defaultUserShell = pkgs-unstable.fish;
+  users.users.raffaele.shell = pkgs-unstable.fish;
 }

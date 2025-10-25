@@ -51,5 +51,6 @@
     '';
   };
 
-  users.defaultUserShell = pkgs.zsh;
+  #users.defaultUserShell = pkgs.zsh;
+  users.users.root.shell = pkgs.zsh;
 }

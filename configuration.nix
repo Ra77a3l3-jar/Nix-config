@@ -73,7 +73,6 @@
      man-pages
      man-pages-posix
      eza
-     glow
      xorg.xhost
   ] ++ (with pkgs-unstable; [
 
