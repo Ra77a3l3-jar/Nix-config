@@ -58,6 +58,11 @@
     zen-browser.packages.${pkgs.system}.default
   ];
 
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true; # or enableZshIntegration
+  };
+
   home.sessionVariables = {
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
   };
