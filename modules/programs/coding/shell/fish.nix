@@ -36,11 +36,18 @@
     '';
 
     shellAliases = {
+      nos-rebuild = "sudo nixos-rebuild switch --flake ./#nixos --verbose";
+      nos-test = "sudo nixos-rebuild test --flake /etc/nixos#nixos";
+      nos-clean = "sudo nix-collect-garbage -d";
+      
       ex = "exit";
       gs = "git status";
       zl = "zellij";
       cl = "clear";
       hs = "history";
+
+      lgit = "lazygit";
+      ldoc = "lazydocker";
 
       la = "eza -la --icons";
       ltree = "eza --tree --level=3 --long --git --icons";
