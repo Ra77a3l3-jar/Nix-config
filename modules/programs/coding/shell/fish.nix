@@ -13,6 +13,13 @@
       # Remove greeting
       set -g fish_greeting ""
 
+      set -x EDITOR hx
+      set -x VISUAL hx
+      set -x CPLUS_INCLUDE_PATH /nix/store/7wcghfk4fq3jqla55a1dnfibqwryxcb3-glew-2.2.0-dev/include \
+                               /nix/store/w1si1zbp9f5zjbk8r7bcqm0n8kdla15i-glfw-3.4/include \
+                               /nix/store/vywrcd6bq9znh1xmql9l1dz29kphg6k8-glu-9.0.3-dev/include \
+                               /nix/store/n26psrbrfci8m9b35cd2090lirjchd05-libglvnd-1.7.0-dev/include
+
       # Explicit PATH additions
       fish_add_path $HOME/.local/bin
       fish_add_path $HOME/.nix-profile/bin
