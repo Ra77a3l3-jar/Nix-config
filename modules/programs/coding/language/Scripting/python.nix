@@ -39,6 +39,7 @@
       requests
       pip
       virtualenv
+      yt-dlp
       
       # Python LSP packages
       python-lsp-server
