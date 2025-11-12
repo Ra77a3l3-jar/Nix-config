@@ -6,7 +6,7 @@ Modular, reproducible NixOS setup with flakes and Secure Boot.
 
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=nixos,linux,git" />
+    <img src="https://skillicons.dev/icons?i=nix,linux,git" />
   </a>
 </p>
 
